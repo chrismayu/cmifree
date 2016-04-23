@@ -1,8 +1,15 @@
-/*!
- * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+// import the CSS framework
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+ 
+ 
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans'); 
+@import url('http://fonts.googleapis.com/css?family=Helvetica Neue');
+@import url('http://fonts.googleapis.com/css?family=Vollkorn');
+//<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+//<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
 body,
 html {
@@ -22,7 +29,16 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px;
+    font-size: 14px; 
+}
+
+.cmilogo{
+	 height: 25%;
+	   width: 25%;
+}     
+ 
+.navbar-default .navbar-nav > li > a{
+	color: #1e73be;
 }
 
 .lead {
