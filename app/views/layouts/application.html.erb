@@ -12,9 +12,31 @@
   </head>
   <body>
     <header>
-      <%= render 'layouts/navigation'%>
+      <%= render 'layouts/navigation' %>
     </header>
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+	
+	
+    <main role="main" id="main">
+		<a href="#" class="scrollup"></a>
+		<div class="container">
+            <div class="row"> 
+			<div class="col-sm-12">
+       <%= render 'layouts/messages' %>
+       <%= yield %><br>
+	   
+	   	<div class="row ">
+	         <div class='col-sm-offset-2 col-sm-10'>
+                 <footer>
+  			        <%= render 'layouts/footer' %>
+                 </footer>
+            </div>
+       </div>
+	   
+	    </div>
+     
+ 	   </div>
+       </div>
+    </main>
+	  
   </body>
 </html>

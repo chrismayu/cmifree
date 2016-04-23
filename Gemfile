@@ -24,6 +24,7 @@ gem 'friendly_id'
 gem 'browsernizer'
 gem 'figaro'
 gem 'heroku'
+gem 'bh'
 gem 'twitter-bootstrap-rails', ' 3.2.0'
 gem 'bootstrap-datepicker-rails'
 group :development do

@@ -45,6 +45,9 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    bh (1.3.6)
+      actionpack
+      activesupport
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-datepicker-rails (1.6.0.1)
@@ -307,6 +310,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  bh
   bootstrap-datepicker-rails
   bootstrap-sass
   browsernizer

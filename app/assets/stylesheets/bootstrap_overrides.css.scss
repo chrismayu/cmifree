@@ -31,11 +31,13 @@ h6 {
 .topnav {
     font-size: 14px; 
 }
+    
+.nav > li > a > img{
+ 
+      width: 30px;	
+}
 
-.cmilogo{
-	 height: 25%;
-	   width: 25%;
-}     
+  
  
 .navbar-default .navbar-nav > li > a{
 	color: #1e73be;
