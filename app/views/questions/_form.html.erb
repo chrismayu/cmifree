@@ -1,0 +1,22 @@
+<%= simple_form_for @question, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :last_name %>
+  <%= error_span(@question[:last_name]) %>
+  <%= f.input :first_name %>
+  <%= error_span(@question[:first_name]) %>
+  <%= f.input :middle_initial %>
+  <%= error_span(@question[:middle_initial]) %>
+  <%= f.input :address %>
+  <%= error_span(@question[:address]) %>
+  <%= f.input :city %>
+  <%= error_span(@question[:city]) %>
+  <%= f.input :postal_code %>
+  <%= error_span(@question[:postal_code]) %>
+  <%= f.input :phone_number %>
+  <%= error_span(@question[:phone_number]) %>
+  <%= f.input :email_address %>
+  <%= error_span(@question[:email_address]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                questions_path, :class => 'btn btn-default' %>
+<% end %>

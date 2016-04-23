@@ -11,10 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423195543) do
+ActiveRecord::Schema.define(version: 20160423205405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "details", force: :cascade do |t|
+    t.string   "church_name"
+    t.string   "event_name"
+    t.string   "title"
+    t.string   "top_comment"
+    t.text     "notes"
+    t.integer  "user_id",                     null: false
+    t.boolean  "premium",     default: false
+    t.string   "image_data"
+    t.date     "remove_date"
+    t.boolean  "disable",     default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "last_name"
+    t.string   "first_name"
+    t.string   "middle_initial"
+    t.string   "address"
+    t.string   "city"
+    t.string   "postal_code"
+    t.string   "phone_number"
+    t.string   "email_address"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,9 +59,11 @@ ActiveRecord::Schema.define(version: 20160423195543) do
     t.datetime "updated_at",                          null: false
     t.string   "name"
     t.integer  "role"
+    t.string   "subdomain"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["subdomain"], name: "index_users_on_subdomain", unique: true, using: :btree
 
 end

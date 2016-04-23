@@ -1,0 +1,26 @@
+<%= simple_form_for @detail, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :church_name %>
+  <%= error_span(@detail[:church_name]) %>
+  <%= f.input :event_name %>
+  <%= error_span(@detail[:event_name]) %>
+  <%= f.input :title %>
+  <%= error_span(@detail[:title]) %>
+  <%= f.input :top_comment %>
+  <%= error_span(@detail[:top_comment]) %>
+  <%= f.input :notes %>
+  <%= error_span(@detail[:notes]) %>
+  <%= f.input :user_id %>
+  <%= error_span(@detail[:user_id]) %>
+  <%= f.input :premium %>
+  <%= error_span(@detail[:premium]) %>
+  <%= f.input :image_data %>
+  <%= error_span(@detail[:image_data]) %>
+  <%= f.input :remove_date %>
+  <%= error_span(@detail[:remove_date]) %>
+  <%= f.input :disable %>
+  <%= error_span(@detail[:disable]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                details_path, :class => 'btn btn-default' %>
+<% end %>

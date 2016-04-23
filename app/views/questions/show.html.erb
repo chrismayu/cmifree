@@ -1,0 +1,33 @@
+<%- model_class = Question -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+  <dd><%= @question.last_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+  <dd><%= @question.first_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:middle_initial) %>:</strong></dt>
+  <dd><%= @question.middle_initial %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @question.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @question.city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:postal_code) %>:</strong></dt>
+  <dd><%= @question.postal_code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
+  <dd><%= @question.phone_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email_address) %>:</strong></dt>
+  <dd><%= @question.email_address %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              questions_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_question_path(@question), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              question_path(@question),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
