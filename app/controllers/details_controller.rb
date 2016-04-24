@@ -64,7 +64,8 @@ class DetailsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_detail
-      @detail = Detail.find(params[:id])
+      id = current_user.detail.id
+      @detail = Detail.find(id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

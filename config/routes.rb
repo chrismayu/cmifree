@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users do
   resources :details
-  end
   
+  end
+  root 'details#show', as: :authenticated_root
   root to: 'visitors#index'
   
 end
