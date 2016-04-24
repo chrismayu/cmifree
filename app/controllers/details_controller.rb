@@ -10,10 +10,15 @@ class DetailsController < ApplicationController
   # GET /details/1
   # GET /details/1.json
   def show
+    if current_user.detail.church_name == nil
+      redirect_to :action=> :edit
+    end 
+    
   end
 
   # GET /details/new
   def new
+    
     @detail = Detail.new
   end
 
@@ -28,7 +33,7 @@ class DetailsController < ApplicationController
 
     respond_to do |format|
       if @detail.save
-        format.html { redirect_to @detail, notice: 'Detail was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Detail was successfully created.' }
         format.json { render :show, status: :created, location: @detail }
       else
         format.html { render :new }
@@ -42,7 +47,7 @@ class DetailsController < ApplicationController
   def update
     respond_to do |format|
       if @detail.update(detail_params)
-        format.html { redirect_to @detail, notice: 'Detail was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Detail was successfully updated.' }
         format.json { render :show, status: :ok, location: @detail }
       else
         format.html { render :edit }

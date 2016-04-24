@@ -18,8 +18,13 @@ Rails.application.routes.draw do
   resources :details
   
   end
-  root 'details#show', as: :authenticated_root
+ 
+  authenticated :user do
+     root 'details#show', as: :authenticated_root
+  end
+
   root to: 'visitors#index'
+  
   
 end
 

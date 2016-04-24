@@ -13,6 +13,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+gem 'i18n_generators', '~> 2.1', '>= 2.1.1'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
@@ -24,7 +25,7 @@ gem 'friendly_id'
 gem 'browsernizer'
 gem 'figaro'
 gem 'heroku'
-gem 'bh'
+gem 'bh', :github=>"davidakachaos/bh"  
 gem 'twitter-bootstrap-rails', ' 3.2.0'
 gem 'bootstrap-datepicker-rails'
 gem 'rollbar', '~> 2.8.3'

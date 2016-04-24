@@ -1,0 +1,44 @@
+ja:
+  activerecord:
+    models:
+      detail: 詳細  #g
+      question: 質問  #g
+      user: ユーザー  #g
+
+    attributes:
+      detail:
+        church_name: 教会名  #g
+        disable: 無効にします  #g
+        event_name: イベント名  #g
+        image_data: 画像データ  #g
+        notes: ノート  #g
+        premium: プレミアム  #g
+        remove_date: 日付を削除します  #g
+        title: タイトル  #g
+        top_comment: トップコメント  #g
+        user: :activerecord.models.user  #g
+
+      question:
+        address: 住所  #g
+        city: シティ  #g
+        email_address: 電子メールアドレス  #g
+        first_name: ファーストネーム  #g
+        last_name: 苗字  #g
+        middle_initial: ミドルネームのイニシャル  #g
+        phone_number: 電話番号  #g
+        postal_code: 郵便番号  #g
+
+      user:
+        current_sign_in_at: 現在の兆候  #g
+        current_sign_in_ip: 腹腔内の現在の兆候  #g
+        detail: :activerecord.models.detail  #g
+        email: Eメール  #g
+        encrypted_password: encrypted_password  #g
+        last_sign_in_at: 最後の記号  #g
+        last_sign_in_ip: 腹腔内の最後の記号  #g
+        name: 名  #g
+        remember_created_at: で作成されたことを覚えておいてください  #g
+        reset_password_sent_at: で送信されたパスワードをリセット  #g
+        reset_password_token: パスワードトークンをリセット  #g
+        role: 役割  #g
+        subdomain: サブドメイン  #g

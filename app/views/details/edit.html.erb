@@ -1,5 +1,27 @@
 <%- model_class = Detail -%>
+
+<div class="block">
+ 
+
+
 <div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+	
+
+    <% if !ready?(current_user)%> 
+   
+ 
+
+ <h1> Step 2 of 2 </h1>
+   <% else %>
+  
+     <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+   
+     <% end %>
+  
+  
 </div>
+
+
+
 <%= render :partial => 'form' %>
+</div>
