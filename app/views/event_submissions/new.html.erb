@@ -1,5 +1,15 @@
 <%- model_class = EventSubmission -%>
+ <% provide(:title, "#{@detail.church_name.titleize} - provided by CMIForms.com" ) %>
+<div class="block">
 <div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+  <h1><%= "#{@detail.church_name.titleize}"%> </h1>
+<h5>A free service provided by <a style="color: #0000ff;" href="http://www.cmiforms.com" target="_blank">CMIForms.com</a>
+</h5>
+<br>
+<h2>Submit an Event:</h2>
 </div>
+
+
 <%= render :partial => 'form' %>
+
+</div>

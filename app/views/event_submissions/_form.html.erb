@@ -1,40 +1,38 @@
 <%= simple_form_for @event_submission, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :full_name %>
-  <%= error_span(@event_submission[:full_name]) %>
-  <%= f.input :event_name %>
-  <%= error_span(@event_submission[:event_name]) %>
-  <%= f.input :event_description %>
-  <%= error_span(@event_submission[:event_description]) %>
-  <%= f.input :event_date %>
-  <%= error_span(@event_submission[:event_date]) %>
-  <%= f.input :start_time %>
-  <%= error_span(@event_submission[:start_time]) %>
-  <%= f.input :end_time %>
-  <%= error_span(@event_submission[:end_time]) %>
-  <%= f.input :taking_place %>
-  <%= error_span(@event_submission[:taking_place]) %>
-  <%= f.input :taking_place_where %>
-  <%= error_span(@event_submission[:taking_place_where]) %>
-  <%= f.input :registration_required %>
-  <%= error_span(@event_submission[:registration_required]) %>
-  <%= f.input :last_name %>
-  <%= error_span(@event_submission[:last_name]) %>
-  <%= f.input :first_name %>
-  <%= error_span(@event_submission[:first_name]) %>
-  <%= f.input :middle_initial %>
-  <%= error_span(@event_submission[:middle_initial]) %>
-  <%= f.input :address %>
-  <%= error_span(@event_submission[:address]) %>
-  <%= f.input :city %>
-  <%= error_span(@event_submission[:city]) %>
-  <%= f.input :postal_code %>
-  <%= error_span(@event_submission[:postal_code]) %>
-  <%= f.input :phone_number %>
-  <%= error_span(@event_submission[:phone_number]) %>
-  <%= f.input :email_address %>
+  
+  
+    <%= f.input :email_address, :label=>"Your Email:", :placeholder=>"Your Email", :input_html => { :class => "enroll_input col-xs-4"}, :required => true   %>
+  
   <%= error_span(@event_submission[:email_address]) %>
+   <%= f.input :full_name, :label=>"Your Name:", :placeholder=>"Your Name", :input_html => { :class => "enroll_input col-xs-4 "}, :required => true   %>
+  <%= error_span(@event_submission[:full_name]) %>
 
-  <%= f.button :submit, :class => 'btn-primary' %>
+   <%= f.input :event_name, :label=>"Event Name:", :placeholder=>"Event Name", :input_html => { :class => "enroll_input col-xs-4 "}, :required => true   %>
+   
+  <%= error_span(@event_submission[:event_name]) %>
+  
+ 
+     <%= f.input :event_description , :label=>"Event Description :", :placeholder=>"Event Description ", :input_html => { :class => "enroll_input col-xs-4 "}, :required => true   %>
+  <%= error_span(@event_submission[:event_description]) %>
+  <%= f.input :event_date, :label=>"Date* (mm/dd/yyyy):"  %>
+  <%= error_span(@event_submission[:event_date]) %>
+  <%= f.input :start_time, :label=>"Event Start Time:*" %>
+  <%= error_span(@event_submission[:start_time]) %>
+  <%= f.input :end_time, :label=>"Event End Time:*"  %>
+  <%= error_span(@event_submission[:end_time]) %>
+  <%= f.input :taking_place, :label=>"Where will your event be taking place?" , :prompt=>["Please Select" ],:collection=>[ ['At Our Church', 'At Our Church' ], ['Somewhere Else..', 'Somewhere Else..' ]  ],  :input_html => { :class => "enroll_input col-xs-1 "}%>
+  
+  <%= error_span(@event_submission[:taking_place]) %>
+  <%= f.input :taking_place_where , :label=>"In which room is your event?"%>
+  <%= error_span(@event_submission[:taking_place_where]) %>
+ 
+   <%= f.input :registration_required,  :as => :radio_buttons, :label=>"Is registration required?*"  %>
+  <%= error_span(@event_submission[:registration_required]) %>
+  
+  
+ 
+
+  <%= f.button :submit, "Submit your Event", :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                event_submissions_path, :class => 'btn btn-default' %>
+                root_path, :class => 'btn btn-default' %>
 <% end %>

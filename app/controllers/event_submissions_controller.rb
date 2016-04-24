@@ -14,6 +14,8 @@ class EventSubmissionsController < ApplicationController
 
   # GET /event_submissions/new
   def new
+    detail = Detail.get_tenant
+    @detail = detail.first
     @event_submission = EventSubmission.new
   end
 
@@ -28,7 +30,10 @@ class EventSubmissionsController < ApplicationController
 
     respond_to do |format|
       if @event_submission.save
-        format.html { redirect_to @event_submission, notice: 'Event submission was successfully created.' }
+        
+        #add here the mailers
+        
+        format.html { redirect_to visitors_thank_you_path, notice: 'Your Event Submission was successfully submitted.' }
         format.json { render :show, status: :created, location: @event_submission }
       else
         format.html { render :new }

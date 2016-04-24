@@ -17,12 +17,19 @@ class User < ActiveRecord::Base
    validates_exclusion_of :subdomain, :in => %w( tester support blog www billing help api ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."
 
    before_validation :downcase_subdomain
-  
+   scope :submission, -> { select( :id) }
+ 
 
    def set_default_role
      self.role ||= :user
    end
 
+
+   def self.get_tenant_user
+     tenant_name = Apartment::Tenant.current
+     detail = User.submission.where(:subdomain => tenant_name)
+     
+   end
  
 
     private
@@ -33,12 +40,12 @@ class User < ActiveRecord::Base
 
 
     def create_tenant
-      #  Apartment::Tenant.create(subdomain)
+       Apartment::Tenant.create(subdomain)
     end    
 
       protected
 
     def downcase_subdomain
-    #  self.subdomain.downcase! if attribute_present?("subdomain")
+      self.subdomain.downcase! if attribute_present?("subdomain")
     end
 end
