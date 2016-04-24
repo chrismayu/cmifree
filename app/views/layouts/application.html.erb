@@ -12,7 +12,7 @@
   </head>
   <body>
     <header>
-      <%= render 'layouts/navigation' %>
+      <%= render 'layouts/navigation'  unless current_page?(new_question_path) %>
     </header>
 	
 	

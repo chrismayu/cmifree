@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to visitors_thank_you_path, notice: 'Your submission was successfully submitted.' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }

@@ -1,0 +1,40 @@
+<%= simple_form_for @event_submission, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :full_name %>
+  <%= error_span(@event_submission[:full_name]) %>
+  <%= f.input :event_name %>
+  <%= error_span(@event_submission[:event_name]) %>
+  <%= f.input :event_description %>
+  <%= error_span(@event_submission[:event_description]) %>
+  <%= f.input :event_date %>
+  <%= error_span(@event_submission[:event_date]) %>
+  <%= f.input :start_time %>
+  <%= error_span(@event_submission[:start_time]) %>
+  <%= f.input :end_time %>
+  <%= error_span(@event_submission[:end_time]) %>
+  <%= f.input :taking_place %>
+  <%= error_span(@event_submission[:taking_place]) %>
+  <%= f.input :taking_place_where %>
+  <%= error_span(@event_submission[:taking_place_where]) %>
+  <%= f.input :registration_required %>
+  <%= error_span(@event_submission[:registration_required]) %>
+  <%= f.input :last_name %>
+  <%= error_span(@event_submission[:last_name]) %>
+  <%= f.input :first_name %>
+  <%= error_span(@event_submission[:first_name]) %>
+  <%= f.input :middle_initial %>
+  <%= error_span(@event_submission[:middle_initial]) %>
+  <%= f.input :address %>
+  <%= error_span(@event_submission[:address]) %>
+  <%= f.input :city %>
+  <%= error_span(@event_submission[:city]) %>
+  <%= f.input :postal_code %>
+  <%= error_span(@event_submission[:postal_code]) %>
+  <%= f.input :phone_number %>
+  <%= error_span(@event_submission[:phone_number]) %>
+  <%= f.input :email_address %>
+  <%= error_span(@event_submission[:email_address]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                event_submissions_path, :class => 'btn btn-default' %>
+<% end %>

@@ -1,0 +1,51 @@
+<%- model_class = EventSubmission -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:full_name) %>:</strong></dt>
+  <dd><%= @event_submission.full_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:event_name) %>:</strong></dt>
+  <dd><%= @event_submission.event_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:event_description) %>:</strong></dt>
+  <dd><%= @event_submission.event_description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:event_date) %>:</strong></dt>
+  <dd><%= @event_submission.event_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_time) %>:</strong></dt>
+  <dd><%= @event_submission.start_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_time) %>:</strong></dt>
+  <dd><%= @event_submission.end_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taking_place) %>:</strong></dt>
+  <dd><%= @event_submission.taking_place %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taking_place_where) %>:</strong></dt>
+  <dd><%= @event_submission.taking_place_where %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:registration_required) %>:</strong></dt>
+  <dd><%= @event_submission.registration_required %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+  <dd><%= @event_submission.last_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+  <dd><%= @event_submission.first_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:middle_initial) %>:</strong></dt>
+  <dd><%= @event_submission.middle_initial %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @event_submission.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @event_submission.city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:postal_code) %>:</strong></dt>
+  <dd><%= @event_submission.postal_code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
+  <dd><%= @event_submission.phone_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email_address) %>:</strong></dt>
+  <dd><%= @event_submission.email_address %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              event_submissions_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_event_submission_path(@event_submission), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              event_submission_path(@event_submission),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

@@ -1,0 +1,68 @@
+<%- model_class = EventSubmission -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:full_name) %></th>
+      <th><%= model_class.human_attribute_name(:event_name) %></th>
+      <th><%= model_class.human_attribute_name(:event_description) %></th>
+      <th><%= model_class.human_attribute_name(:event_date) %></th>
+      <th><%= model_class.human_attribute_name(:start_time) %></th>
+      <th><%= model_class.human_attribute_name(:end_time) %></th>
+      <th><%= model_class.human_attribute_name(:taking_place) %></th>
+      <th><%= model_class.human_attribute_name(:taking_place_where) %></th>
+      <th><%= model_class.human_attribute_name(:registration_required) %></th>
+      <th><%= model_class.human_attribute_name(:last_name) %></th>
+      <th><%= model_class.human_attribute_name(:first_name) %></th>
+      <th><%= model_class.human_attribute_name(:middle_initial) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:city) %></th>
+      <th><%= model_class.human_attribute_name(:postal_code) %></th>
+      <th><%= model_class.human_attribute_name(:phone_number) %></th>
+      <th><%= model_class.human_attribute_name(:email_address) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @event_submissions.each do |event_submission| %>
+      <tr>
+        <td><%= link_to event_submission.id, event_submission_path(event_submission) %></td>
+        <td><%= event_submission.full_name %></td>
+        <td><%= event_submission.event_name %></td>
+        <td><%= event_submission.event_description %></td>
+        <td><%= event_submission.event_date %></td>
+        <td><%= event_submission.start_time %></td>
+        <td><%= event_submission.end_time %></td>
+        <td><%= event_submission.taking_place %></td>
+        <td><%= event_submission.taking_place_where %></td>
+        <td><%= event_submission.registration_required %></td>
+        <td><%= event_submission.last_name %></td>
+        <td><%= event_submission.first_name %></td>
+        <td><%= event_submission.middle_initial %></td>
+        <td><%= event_submission.address %></td>
+        <td><%= event_submission.city %></td>
+        <td><%= event_submission.postal_code %></td>
+        <td><%= event_submission.phone_number %></td>
+        <td><%= event_submission.email_address %></td>
+        <td><%=l event_submission.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_event_submission_path(event_submission), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      event_submission_path(event_submission),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_event_submission_path,
+            :class => 'btn btn-primary' %>

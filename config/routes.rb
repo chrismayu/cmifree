@@ -8,8 +8,10 @@ end
 
 Rails.application.routes.draw do
  
+  
   constraints SubdomainConstraint do
      resources :questions 
+     resources :event_submissions
   end
   
   
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
   authenticated :user do
      root 'details#show', as: :authenticated_root
   end
-
+  get "visitors/thank_you"
   root to: 'visitors#index'
   
   
