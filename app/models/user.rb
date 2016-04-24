@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   enum role: [:user, :vip, :admin]
+  
   has_one :detail   
  
   after_create :set_detail, :create_tenant
@@ -26,8 +27,8 @@ class User < ActiveRecord::Base
 
     private
 
-    def set_detail
-      build_detail unless detail.present?
+    def set_detail 
+      build_detail
     end   
 
 

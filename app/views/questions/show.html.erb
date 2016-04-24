@@ -20,6 +20,24 @@
   <dd><%= @question.phone_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:email_address) %>:</strong></dt>
   <dd><%= @question.email_address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:full_name) %>:</strong></dt>
+  <dd><%= @question.full_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:event_name) %>:</strong></dt>
+  <dd><%= @question.event_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:event_description) %>:</strong></dt>
+  <dd><%= @question.event_description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:event_date) %>:</strong></dt>
+  <dd><%= @question.event_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_time) %>:</strong></dt>
+  <dd><%= @question.start_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_time) %>:</strong></dt>
+  <dd><%= @question.end_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taking_place) %>:</strong></dt>
+  <dd><%= @question.taking_place %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taking_place_where) %>:</strong></dt>
+  <dd><%= @question.taking_place_where %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:registration_required) %>:</strong></dt>
+  <dd><%= @question.registration_required %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

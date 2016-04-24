@@ -13,12 +13,10 @@ Rails.application.routes.draw do
   end
   
   
-  devise_for :users
+  devise_for :users, controllers: {registrations: "registrations" }
   resources :users do
   resources :details
-  
   end
- 
   authenticated :user do
      root 'details#show', as: :authenticated_root
   end

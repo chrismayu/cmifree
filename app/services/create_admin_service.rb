@@ -4,7 +4,7 @@ class CreateAdminService
         user.password = Rails.application.secrets.admin_password
         user.password_confirmation = Rails.application.secrets.admin_password
         user.subdomain = "chrismailloux"
-        user.build_detail
+        #user.build_detail
         user.admin!
       end
   end

@@ -27,6 +27,15 @@ en:
         middle_initial: Middle initial  #g
         phone_number: Phone number  #g
         postal_code: Postal code  #g
+        end_time: end_time  #g
+        event_date: Event date  #g
+        event_description: Event description  #g
+        event_name: Event name  #g
+        full_name: full_name  #g
+        registration_required: Registration required  #g
+        start_time: start_time  #g
+        taking_place: Taking place  #g
+        taking_place_where: Taking place where  #g
 
       user:
         current_sign_in_at: Current sign in at  #g
