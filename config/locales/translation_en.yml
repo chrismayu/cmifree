@@ -4,6 +4,7 @@ en:
       detail: Detail  #g
       question: Question  #g
       user: User  #g
+      event_submission: Event submission  #g
 
     attributes:
       detail:
@@ -51,3 +52,22 @@ en:
         reset_password_token: Reset password token  #g
         role: Role  #g
         subdomain: Subdomain  #g
+
+      event_submission:
+        address: Address  #g
+        city: City  #g
+        email_address: Email address  #g
+        end_time: End time  #g
+        event_date: Event date  #g
+        event_description: Event description  #g
+        event_name: Event name  #g
+        first_name: First name  #g
+        full_name: Full name  #g
+        last_name: Last name  #g
+        middle_initial: Middle initial  #g
+        phone_number: Phone number  #g
+        postal_code: Postal code  #g
+        registration_required: registration_required  #g
+        start_time: Start time  #g
+        taking_place: Taking place  #g
+        taking_place_where: Taking place where  #g

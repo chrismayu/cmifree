@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <li><%= link_to 'Details', user_detail_url(current_user, current_user.detail) %></li>
   <% if ready?(current_user)%>
-  <li><%= link_to 'Form', new_question_url(subdomain: current_user.subdomain)  %></li>
+  <li><%= link_to 'Form', new_event_submission_url(subdomain: current_user.subdomain)  %></li>
     <% end %>
   <li><%= link_to 'Edit account', edit_user_registration_path %></li>
   <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
