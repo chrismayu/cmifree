@@ -27,6 +27,7 @@ gem 'heroku'
 gem 'bh'
 gem 'twitter-bootstrap-rails', ' 3.2.0'
 gem 'bootstrap-datepicker-rails'
+gem 'rollbar', '~> 2.8.3'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'

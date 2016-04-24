@@ -228,6 +228,8 @@ GEM
       railties (>= 4.2.0, < 5.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rollbar (2.8.3)
+      multi_json
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -340,6 +342,7 @@ DEPENDENCIES
   rb-fchange
   rb-fsevent
   rb-inotify
+  rollbar (~> 2.8.3)
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
