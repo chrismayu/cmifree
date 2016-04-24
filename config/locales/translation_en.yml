@@ -1,0 +1,44 @@
+en:
+  activerecord:
+    models:
+      detail: Detail  #g
+      question: Question  #g
+      user: User  #g
+
+    attributes:
+      detail:
+        church_name: Church name  #g
+        disable: Disable  #g
+        event_name: Event name  #g
+        image_data: Image data  #g
+        notes: Notes  #g
+        premium: Premium  #g
+        remove_date: Remove date  #g
+        title: Title  #g
+        top_comment: Top comment  #g
+        user: :activerecord.models.user  #g
+
+      question:
+        address: Address  #g
+        city: City  #g
+        email_address: Email address  #g
+        first_name: First name  #g
+        last_name: Last name  #g
+        middle_initial: Middle initial  #g
+        phone_number: Phone number  #g
+        postal_code: Postal code  #g
+
+      user:
+        current_sign_in_at: Current sign in at  #g
+        current_sign_in_ip: Current sign in ip  #g
+        detail: :activerecord.models.detail  #g
+        email: Email  #g
+        encrypted_password: Encrypted password  #g
+        last_sign_in_at: Last sign in at  #g
+        last_sign_in_ip: Last sign in ip  #g
+        name: Name  #g
+        remember_created_at: Remember created at  #g
+        reset_password_sent_at: Reset password sent at  #g
+        reset_password_token: Reset password token  #g
+        role: Role  #g
+        subdomain: Subdomain  #g
