@@ -30,7 +30,10 @@ gem 'twitter-bootstrap-rails', ' 3.2.0'
 gem 'bootstrap-datepicker-rails'
 gem 'rollbar', '~> 2.8.3'
 gem 'apartment'
+
+ 
 group :development do
+  gem "letter_opener"
   gem 'better_errors'
   gem 'guard-bundler'
   gem 'guard-rails'

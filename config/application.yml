@@ -26,7 +26,7 @@ SECRET_KEY_BASE: 739937333cb6c535e798347893434iu349g39gh32423423423423423894g83j
 DOMAIN_NAME: heisreal.net 
 ROLLBAR_ACCESS_TOKEN: 1a0f03a032724d56b7f8905e1ae51b14
 return_email_address: ruby.rails.chris@gmail.com
-  
+SITE_EMAIL: ruby.rails.chris@gmail.com
 
 ROLES: '[admin, user, VIP]'
 URL: 'http://www.hannahs-headbands.com/'

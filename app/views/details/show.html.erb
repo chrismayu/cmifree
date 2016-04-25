@@ -1,16 +1,19 @@
   <%- model_class = Detail -%>
   
-  
+ 
  <div class="block"> 
-   
+   <div class="row">  
+<div class="col-sm-offset-1 col-sm-10">
   
   <% if ready?(current_user)%> 
    
 
-You questionaire is active and ready to be used:
+<h2>You questionaire is active and ready to be used:</h2>
+<br>
 
- <%= link_to "#{current_user.subdomain}", new_question_url(subdomain: current_user.subdomain) %>
 
+<h3> Send people here:  <%= link_to "#{current_user.subdomain}.#{ENV['DOMAIN_NAME']}", new_event_submission_url(subdomain: current_user.subdomain) %></h3>
+<br>
  <% else %>
 Your account is also ready to go:
 
@@ -19,21 +22,20 @@ clikc here to complete your application:
 add link to detail edit 
 
  <% end %>
+</div> </div>
+    <div class="row">  
+ <div class="col-sm-offset-2 col-sm-8">
 
-
+<h4>Your Event Submission Detail:</h4>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:church_name) %>:</strong></dt>
-  <dd><%= @detail.church_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:event_name) %>:</strong></dt>
+  <dd><%= @detail.church_name %></dd> 
   <dd><%= @detail.event_name %></dd>
- 
- 
- 
  
 </dl>
 
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_user_detail_path(current_user, @detail), :class => 'btn btn-default' %>
- 
+ <br><br>
 </div>

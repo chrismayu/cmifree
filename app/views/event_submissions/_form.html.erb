@@ -29,6 +29,9 @@
    <%= f.input :registration_required,  :as => :radio_buttons, :label=>"Is registration required?*"  %>
   <%= error_span(@event_submission[:registration_required]) %>
   
+   <%= f.input :how_to_market,   :label=>"How would you like your event promoted?*"  %>
+  <%= error_span(@event_submission[:how_to_market]) %>
+  
   
  
 

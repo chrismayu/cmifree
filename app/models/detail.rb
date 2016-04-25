@@ -10,6 +10,8 @@ class Detail < ActiveRecord::Base
 
   scope :submission, -> { select( :church_name) }
 
+ 
+
   def self.get_tenant
     tenant_name = Apartment::Tenant.current
     user = User.get_tenant_user

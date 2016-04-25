@@ -1,0 +1,15 @@
+ 
+ Event Request
+ 
+ 
+  Name: <%= @event_submission.full_name %>  
+  Event Name: <%= @event_submission.event_name %> 
+  Event Description: <%= @event_submission.event_description %> 
+  Event Date: <%= date_email(@event_submission.event_date)  %> 
+  Start Time: <%= time_email(@event_submission.start_time) %>  
+  End Time: <%= time_email(@event_submission.end_time) %>
+  It will take place: <%= @event_submission.taking_place %> 
+  It will take place here: <%= @event_submission.taking_place_where %> 
+  Registration Required?: <%= if_yes_or_no(@event_submission.registration_required) %>  
+  How to Market the Event: <%= @event_submission.how_to_market%> 
+ 

@@ -26,12 +26,16 @@ class EventSubmissionsController < ApplicationController
   # POST /event_submissions
   # POST /event_submissions.json
   def create
+    tenant_email = User.get_tenant_user_email
+
     @event_submission = EventSubmission.new(event_submission_params)
 
     respond_to do |format|
       if @event_submission.save
         
         #add here the mailers
+        EventMailer.event_submission_received(@event_submission).deliver_now
+        EventMailer.event_request(@event_submission, tenant_email).deliver_now
         
         format.html { redirect_to visitors_thank_you_path, notice: 'Your Event Submission was successfully submitted.' }
         format.json { render :show, status: :created, location: @event_submission }
@@ -74,6 +78,6 @@ class EventSubmissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_submission_params
-      params.require(:event_submission).permit(:full_name, :event_name, :event_description, :event_date, :start_time, :end_time, :taking_place, :taking_place_where, :registration_required, :last_name, :first_name, :middle_initial, :address, :city, :postal_code, :phone_number, :email_address)
+      params.require(:event_submission).permit(:full_name, :event_name,  :how_to_market, :event_description, :event_date, :start_time, :end_time, :taking_place, :taking_place_where, :registration_required, :last_name, :first_name, :middle_initial, :address, :city, :postal_code, :phone_number, :email_address)
     end
 end
