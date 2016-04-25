@@ -1,7 +1,7 @@
 // import the CSS framework
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import "font-awesome";
  
  
 
@@ -23,8 +23,29 @@ body {
     font-style: normal;
 }
 
+ 
+.white_text{
+	color: white;
+} 
 
-body { padding-top: -40px; } 
+
+.navbar-fixed-top_lower{
+	@extend .navbar-fixed-top;
+    margin-top: 32px;	
+	background-color:#FFF; 
+	
+}
+.navbar-fixed-top-text{
+	padding-top: 5px;
+	
+}
+
+.navbar-fixed-tops{
+	@extend .navbar-fixed-top;
+	padding-top: 4px; 
+}
+
+body { padding-top: 45px; } 
 
 body,
 html {
@@ -204,9 +225,16 @@ html {
 }
 
 footer {
-    padding: 50px 0; 
+   
 }
 
 p.copyright {
     margin: 15px 0 0;
 }
+
+
+.pull-center{text-align:center;margin:0 auto !important;}
+.pull-middle{vertical-align:middle;padding-top:17% !important;}
+.pull-bottom{position:absolute;bottom:0;}
+.pull-left{vertical-align:left;bottom:0;}
+.pull-left-image{vertical-align:left;bottom:0;}

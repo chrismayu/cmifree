@@ -1,49 +1,51 @@
+<nav class="navbar navbar-inverse navbar-fixed-tops" role="navigation">
+  <div class="container">
+  <ul class="pull-right ">
 
- <%= navbar position: :top  do %>
  
- 			<div id="top-header" class="et-fixed-header">
- 			<div class="container clearfix">
-
-			
- 				<div id="et-secondary-menu">
- 				<ul class="et-social-icons">
-
- 	<li class="et-social-icon et-social-facebook">
+ 	<li>
  		<a href="https://www.facebook.com/groups/1694398920848271/" class="icon">
- 			<span>Facebook</span>
+ 			<span><i class="fa fa-facebook white_fa" aria-hidden="true"></i></span>
  		</a>
- 	</li>
- 	<li class="et-social-icon et-social-twitter">
+  &nbsp;&nbsp;
  		<a href="https://twitter.com/therealcmi" class="icon">
- 			<span>Twitter</span>
+ 			<span><i class="fa fa-twitter white_fa" aria-hidden="true"></i></span>
  		</a>
  	</li>
 
- </ul>				</div> <!-- #et-secondary-menu -->
+ </ul>				 
 
- 			</div> <!-- .container -->
- 		</div> <!-- #top-header -->
+ 		 
 	
  
 
-<% end %>
- 
- <%= navbar position: :top  do %>
-  <ul class="nav nav-pills pull-left "> 
-	   <li> <%= link_to image_tag("CMI-Forms-Logo.jpg" ), root_path, :class=>' navbar-brand cmilogo'%> </li>
-  </ul>
-  <%= horizontal do %> 
-  <ul class="nav nav-pills pull-right"> 
 
-        <%= render 'layouts/navigation_links' %>
-        <%= render 'layouts/nav_links_for_auth' %>
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-default navbar-fixed-top_lower" role="navigation">
+  <div class="container">
+  
+
+  <ul class="nav nav-pills pull-left "> 
+	 <li> <%= link_to image_tag("CMI-Forms-Logo.jpg" ), root_path, :class=>' navbar-brand cmilogo'%> </li>
+  </ul>
+  <div class="collapse navbar-collapse" id="navbar-collapse-8647774156"> 
+  <ul class="nav nav-pills pull-right navbar-fixed-top-text"> 
+
+   <%= render 'layouts/navigation_links' %>
+   <%= render 'layouts/nav_links_for_auth' %>
+   
+
          
 	 
 		 
 		 </ul>
       
-  <% end %>
+</div>
 
-<% end %>
+  </div>
+</nav>
 
  
