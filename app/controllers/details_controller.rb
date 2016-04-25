@@ -11,7 +11,7 @@ class DetailsController < ApplicationController
   # GET /details/1.json
   def show
     if current_user.detail.church_name == nil
-      redirect_to :action=> :edit
+      redirect_to edit_user_detail_path(current_user,current_user.detail)
     end 
     
   end
