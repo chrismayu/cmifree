@@ -10,13 +10,13 @@ Rails.application.routes.draw do
  
   
   constraints SubdomainConstraint do
-     resources :questions 
+     
      resources :event_submissions
   end
   authenticated :user do
      root 'details#show', as: :authenticated_root
   end
-  
+  resources :questions 
   devise_for :users, controllers: {registrations: "registrations" }
   resources :users do
   resources :details

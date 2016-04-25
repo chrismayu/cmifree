@@ -7,6 +7,8 @@ class VisitorsController < ApplicationController
     unless request.subdomain == "www" or request.subdomain == ""
     redirect_to new_event_submission_url(subdomain: request.subdomain) 
     end
+    
+      @question = Question.new
 
   end
 end
