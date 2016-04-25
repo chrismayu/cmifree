@@ -29,14 +29,14 @@ class EventSubmissionsController < ApplicationController
   # POST /event_submissions.json
   def create
     tenant_email = User.get_tenant_user_email
-
+    tenant = Apartment::Tenant.current
     @event_submission = EventSubmission.new(event_submission_params)
 
     respond_to do |format|
       if @event_submission.save
         
         #add here the mailers
-        EventMailer.event_submission_received(@event_submission).deliver_now
+        EventMailer.event_submission_received(@event_submission, tenant).deliver_now
         EventMailer.event_request(@event_submission, tenant_email).deliver_now
         
         format.html { redirect_to visitors_thank_you_path, notice: 'Your Event Submission was successfully submitted.' }

@@ -16,4 +16,11 @@
   Registration Required?:  </strong> <%= if_yes_or_no(@event_submission.registration_required) %> <br> <strong> 
   How to Market the Event: </strong> <%= @event_submission.how_to_market%> <br> 
 <br> <br> 
+
+
+</p>
+<p>
+	If you have another Event would like to book - please visit the same form you just used:
+ <%= link_to "#{@tenant}.#{ENV['DOMAIN_NAME']}",  root_url(subdomain: @tenant) %>
+	
 </p>

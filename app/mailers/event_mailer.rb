@@ -6,9 +6,10 @@ class EventMailer < ApplicationMailer
   #   en.event_mailer.event_submission_received.subject
   #
   default from: ENV["SITE_EMAIL"]
-  def event_submission_received(event)
+  def event_submission_received(event, tenant)
  
     @event_submission = event
+    @tenant = tenant
  
     mail to: event.email_address,  subject: "CMIForms - Event Submission Received"
     
