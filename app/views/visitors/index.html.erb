@@ -14,7 +14,7 @@
  <br>
  [Yes, our event form is free to use. Premium features are also available]
 	 <div class="authform">
-	  <%= form_for(:user, :url => session_path(:user)) do |f| %>
+	  <%= form_for(:user, :url => registration_path(:user)) do |f| %>
 	     <h3>Sign up</h3> 
 	     <div class="form-group">
 	       <%= f.label :subdomain %>
