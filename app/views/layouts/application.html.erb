@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "CMIForms.com" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "My Application" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
     <%= csrf_meta_tags %>
   
 
@@ -37,12 +37,10 @@
     </main>
 	  
   </body>
-  	<div class="row ">
-        <div class='col-sm-12'>
+  
             <footer>
 	        <%= render 'layouts/footer' %>
             </footer>
-       </div>
-  </div>
+    
   
 </html>
