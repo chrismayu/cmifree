@@ -6,10 +6,13 @@
 <h5>A free service provided by <a style="color: #0000ff;" href="http://www.cmiforms.com" target="_blank">CMIForms.com</a>
 </h5>
 <br>
-<h2>Submit an Event:</h2>
+<h2>Submit an Event:</h2> 
+<h5><%= "#{@tenant.first.name.titleize}"%>  will receive this submission by email. You will also receive the information to the email address entered below:</h5>
 </div>
 
-
+    <div class="row">  
+ <div class="col-sm-offset-1 col-sm-10">
 <%= render :partial => 'form' %>
-
+<br><br>
+</div></div>
 </div>

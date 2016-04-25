@@ -19,13 +19,18 @@ class User < ActiveRecord::Base
    before_validation :downcase_subdomain
    scope :submission, -> { select( :id) }
    scope :email, -> { select( :email) }
+   scope :display_name, -> { select( :name) }
  
 
    def set_default_role
      self.role ||= :user
    end
 
-
+   def self.get_name
+     tenant_name = Apartment::Tenant.current
+     detail = User.display_name.where(:subdomain => tenant_name)
+   end
+   
    def self.get_tenant_user_email
      tenant_name = Apartment::Tenant.current
      detail = User.email.where(:subdomain => tenant_name)

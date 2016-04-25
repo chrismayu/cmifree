@@ -15,8 +15,10 @@ class EventSubmissionsController < ApplicationController
   # GET /event_submissions/new
   def new
     detail = Detail.get_tenant
+    @tenant = User.get_name
     @detail = detail.first
     @event_submission = EventSubmission.new
+    
   end
 
   # GET /event_submissions/1/edit
