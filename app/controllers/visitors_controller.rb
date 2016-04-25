@@ -4,10 +4,9 @@ class VisitorsController < ApplicationController
        redirect_to user_detail_url(current_user, current_user.detail) 
     end
     
-    unless request.subdomain == "www"
-      puts " sending to the submission"
-     redirect_to new_event_submission_url(subdomain: request.subdomain) 
+    unless request.subdomain == "www" or request.subdomain == ""
+    redirect_to new_event_submission_url(subdomain: request.subdomain) 
     end
-    
+
   end
 end
