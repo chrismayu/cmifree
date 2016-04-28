@@ -14,9 +14,9 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
   def new
-    @question = Question.new
+    @question = Question.new     
   end
-
+ 
   # GET /questions/1/edit
   def edit
   end
@@ -28,6 +28,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
+        QuestionMailer.trial_email(@question).deliver_now
         format.html { redirect_to root_path, notice: 'Your submission was successfully submitted.' }
         format.json { render :show, status: :created, location: @question }
       else
@@ -69,7 +70,7 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:last_name, :first_name, :full_name, :event_name, :event_description, :event_date, :start_time, :end_time, :taking_place, :taking_place_where, :registration_required, :middle_initial, :address, :city, :postal_code, :phone_number, :email_address)
+      params.require(:question).permit(:last_name, :first_name, :full_name, :how_to_market,  :event_name, :event_description, :event_date, :start_time, :end_time, :taking_place, :taking_place_where, :registration_required, :middle_initial, :address, :city, :postal_code, :phone_number, :email_address)
     end
 end
  

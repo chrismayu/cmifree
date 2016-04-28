@@ -1,76 +1,40 @@
     <div class="row">  
  <div class="col-sm-12">
+ 
 	
+ <%= render :partial => 'first_with_signup' %>	
 	
-	  <div class="row">  
-	 <div class="col-sm-8">
-	 
-		<a href="http://www.churchmarketingideas.com" target="_blank"><img src="http://www.cmiforms.com/wp-content/uploads/2016/01/Full-name-forms-logo.png" alt=""></a>
-	 
-		<img src="http://www.cmiforms.com/wp-content/uploads/2016/01/iphone-A-B.png" alt="">
-	 </div>
-	 <div class="col-sm-4">
- <img src="http://www.cmiforms.com/wp-content/uploads/2016/01/Get-this-tool-free.png" alt="">
- <br>
- [Yes, our event form is free to use. Premium features are also available]
-	 <div class="authform">
-	  <%= form_for(:user, :url => registration_path(:user)) do |f| %>
-	     <h3>Sign up</h3> 
-	     <div class="form-group">
-	       <%= f.label :subdomain %>
-	       <%= f.text_field :subdomain, :autofocus => true, class: 'form-control' %>
-	     </div>
-	     <div class="form-group">
-	       <%= f.label :name %>
-	       <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
-	     </div>
-	     <div class="form-group">
-	       <%= f.label :email %>
-	       <%= f.email_field :email, class: 'form-control' %>
-	     </div>
-	     <div class="form-group">
-	       <%= f.label :password %>
-	       <%= f.password_field :password, class: 'form-control' %>
-	     </div>
-	     <div class="form-group">
-	       <%= f.label :password_confirmation %>
-	       <%= f.password_field :password_confirmation, class: 'form-control' %>
-	     </div>
-	      <%= f.submit "Let's Get Started!", :class => 'button center' %>
-	   <% end %>
-	 </div>
-	 
-	 </div>
+	<div id="question">
 	</div>
 	
-	 
-
 	
-	  <div class="row">  
+ <div class="row">  
 	 <div class="col-sm-12 white_text">
-		<hr class="et_pb_module et_pb_space et_pb_divider et_pb_divider_0 et-hide-mobile"> 
+		 <hr class="et_pb_module et_pb_space et_pb_divider et_pb_divider_0 et-hide-mobile"> 
 		 
-	 <h1 style="text-align: center;"><strong>What’s included with my FREE event form?</strong></h1>
+		 <h1 style="text-align: center;"><strong>What’s included with my FREE event form?</strong></h1>
 	 </div>
-    </div>
+ </div>
+ 
+ 
+
 	 
-	  <div class="row ">  
+ <div class="row ">  
+	
+	
 	 <div class="col-sm-6">
-		<div class="block">		
-	 <h3>1. Your Event Form:</h3>
-	 <p>Try out your event request form:</p>
-	 <p></p>
+		 <div class="block">		
+			 <h3>1. Your Event Form:</h3>
+			 <p>Try out your event request form:</p>
+			 <p></p>
 	 
-	 <h1></h1><span>(we'll send this sample form to the email address so you can see what the results will look like)</span>
-	 <%= render :partial => 'questions/form', :object => @question %>
+			 <h1></h1><span>(we'll send this sample form to the email address so you can see what the results will look like)</span>
+			 <%= render :partial => 'questions/form', :object => @question %>
 	 
-	 </div>	  
+		 </div>	  
 	 
- 	 </div>
+	 </div>
    
-	 
-	 
-	  
 	 <div class="col-sm-6 white_text">
 	 
 	 
@@ -78,14 +42,20 @@
 				
 	 <h3>2. Your&nbsp;Unique Form Address:</h3>
 	 <p><em><img class="aligncenter size-large wp-image-24259" src="http://www.cmiforms.com/wp-content/uploads/2016/01/Address-Bar-1024x90.jpg" alt="Address-Bar" width="1024" height="90" srcset="http://www.cmiforms.com/wp-content/uploads/2016/01/Address-Bar-300x26.jpg 300w, http://www.cmiforms.com/wp-content/uploads/2016/01/Address-Bar-768x67.jpg 768w, http://www.cmiforms.com/wp-content/uploads/2016/01/Address-Bar-1024x90.jpg 1024w, http://www.cmiforms.com/wp-content/uploads/2016/01/Address-Bar-1080x95.jpg 1080w, http://www.cmiforms.com/wp-content/uploads/2016/01/Address-Bar.jpg 1138w" sizes="(max-width: 1024px) 100vw, 1024px"></em></p>
-	 <p>Link to this page from a button on your website, or give out your direct address to whoever needs it.</p>
+	 <p class='main_page_med_text'>Link to this page from a button on your website, or give out your direct address to whoever needs it.</p>
 
-	 			 <hr class="et_pb_module et_pb_space et_pb_divider_1 et-hide-mobile"> 
+	 			 <br>
+				
+ 			 <br>
 				
 	 <h3>3. Event Request Emails directly to your inbox:</h3>
 	 <p><img class="aligncenter size-full wp-image-24260" src="http://www.cmiforms.com/wp-content/uploads/2016/01/Laptop-email-received.png" alt="Laptop-email-received" width="500" height="288" srcset="http://www.cmiforms.com/wp-content/uploads/2016/01/Laptop-email-received-300x173.png 300w, http://www.cmiforms.com/wp-content/uploads/2016/01/Laptop-email-received.png 500w" sizes="(max-width: 500px) 100vw, 500px"></p>
 
-	 			 <hr class="et_pb_module et_pb_space et_pb_divider_2 et-hide-mobile"><div class="et_pb_module et-waypoint et_pb_image et_pb_animation_off et_pb_image_3 et_always_center_on_mobile et-animated">
+   	 			 <br>
+				
+    			 <br> 
+				 
+				 <div class=" ">
 	 				<img src="http://www.cmiforms.com/wp-content/uploads/2016/01/Try-Premium.png" alt="">
 				
 				
@@ -94,98 +64,32 @@
 	 
 	 
  	 </div>
- </div>
+ </div>  <!-- row end -->
 	 
 	 
 	 
 	 
 	 
-	  <div class="row white_text">  
-	 <div class="col-sm-12">
+	  
 	 
-	 
-				<hr class="et_pb_module et_pb_space et_pb_divider et_pb_divider_3 et-hide-mobile">
-				
-				
-	 <h1 style="text-align: center;"><strong>What’s Features do I get with Premium Forms ($19/month)?</strong></h1>
-
-	 	 </div>
-	 </div>		 
-   	  <div class="row white_text">  
-   	 <div class="col-sm-6">	 
-			 
-			 
-	 				<img src="http://www.cmiforms.com/wp-content/uploads/2016/01/Premium-landing-Page.png" alt="">
-	 			 
-				
-   	 </div>		  
-      	 <div class="col-sm-6">		 
-				
-	 <p>• <strong>Branded Landing Page</strong> with your logo</p>
-	 <p>• Your choice of up to <strong>6 complete incoming request forms</strong> (Choose as many as apply)</p>
-	 <p>• <strong>Individual recipients or multiple recipients</strong> per form (ie. “Website” form goes to one email address, “Digital Images” form goes to another, and “Submit An Event” form goes to both.)</p>
-
-	 		 
-	 				<a class=" " href="http://www.cmiforms.com/get-premium/">Get Premium Forms!</a>
-	 		 
-	 	 </div>
-	 </div>
-	 
-	 
-	 
-	   <div class="block">  
-   	  <div class="row">  
-   	 <div class="col-sm-12">
-	 
-	 
-	 
-		<h1 class="et_pb_contact_main_title">Have a Question? We can't wait to hear from you!</h1>
-		<div class="et-pb-contact-message"></div>
-		
-		<div class="et_pb_contact">
-			<form class="et_pb_contact_form clearfix" method="post" action="http://www.cmiforms.com/">
-				<div class="et_pb_contact_left">
-					<p class="clearfix">
-						<label for="et_pb_contact_name_0" class="et_pb_contact_form_label">Name</label>
-						<input type="text" id="et_pb_contact_name_0" class="input et_pb_contact_name" value="Name" name="et_pb_contact_name_0">
-					</p>
-					<p class="clearfix">
-						<label for="et_pb_contact_email_0" class="et_pb_contact_form_label">Email Address</label>
-						<input type="text" id="et_pb_contact_email_0" class="input et_pb_contact_email" value="Email Address" name="et_pb_contact_email_0">
-					</p>
-				</div> <!-- .et_pb_contact_left -->
-
-				<div class="clear"></div>
-				<p class="clearfix">
-					<label for="et_pb_contact_message_0" class="et_pb_contact_form_label">Message</label>
-					<textarea name="et_pb_contact_message_0" id="et_pb_contact_message_0" class="et_pb_contact_message input">Message</textarea>
-				</p>
-
-				<input type="hidden" value="et_contact_proccess" name="et_pb_contactform_submit_0">
-
-				<button type="submit" class="et_pb_contact_submit et_pb_button">Submit</button>
-
-				
-	<div class="et_pb_contact_right">
-		<p class="clearfix">
-			<span class="et_pb_contact_captcha_question">13 + 2</span> = <input type="text" size="2" class="input et_pb_contact_captcha" data-first_digit="13" data-second_digit="2" value="" name="et_pb_contact_captcha_0">
-		</p>
-	</div> <!-- .et_pb_contact_right -->
-
-				<input type="hidden" id="_wpnonce-et-pb-contact-form-submitted" name="_wpnonce-et-pb-contact-form-submitted" value="17632d96d4"><input type="hidden" name="_wp_http_referer" value="/">
-			</form>
-	 
-	  </div>
-	 </div>
-	 </div>
-	 
-	 
-	 
-	 
-	 
+	 <%= render :partial => 'center_text' %>
 	 
  </div>
 </div>
+ 	 
+	 
+	 
+	 
+	  
+   	  <div class="row">  
+   	 <div class="col-sm-12">
+	 
+	  <%= render :partial => 'contact' %>
+	 
+	  
+	  </div>
+	 </div>
+ 
  
   
 					

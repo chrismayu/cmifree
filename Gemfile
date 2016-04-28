@@ -31,7 +31,13 @@ gem 'twitter-bootstrap-rails', ' 3.2.0'
 gem 'bootstrap-datepicker-rails'
 gem 'rollbar', '~> 2.8.3'
 gem 'apartment'
-
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-angular'
+  gem 'rails-assets-leaflet'
+  gem 'rails-assets-bootstrap-sweetalert'
+  gem 'rails-assets-font-awsome'
+end
  
 group :development do
   gem "letter_opener"

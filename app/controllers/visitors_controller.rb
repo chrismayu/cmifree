@@ -9,6 +9,8 @@ class VisitorsController < ApplicationController
     end
     
       @question = Question.new
+       @message = Message.new
+        @captcha = Captcha.new
 
   end
 end

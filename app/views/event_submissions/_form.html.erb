@@ -23,8 +23,20 @@
   <%= f.input :taking_place, :label=>"Where will your event be taking place?" , :prompt=>["Please Select" ],:collection=>[ ['At Our Church', 'At Our Church' ], ['Somewhere Else..', 'Somewhere Else..' ]  ],  :input_html => { :class => "enroll_input col-xs-1 "}%>
   
   <%= error_span(@event_submission[:taking_place]) %>
+   <div id="taking_place_where" >
   <%= f.input :taking_place_where , :label=>"In which room is your event?"%>
   <%= error_span(@event_submission[:taking_place_where]) %>
+
+ </div>
+ 
+ <% end%>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
    <%= f.input :registration_required,  :as => :radio_buttons, :label=>"Is registration required?*"  %>
   <%= error_span(@event_submission[:registration_required]) %>

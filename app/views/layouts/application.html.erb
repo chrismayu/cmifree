@@ -1,46 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "CMIForms.com" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "My Application" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
-    <%= csrf_meta_tags %>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= content_for?(:title) ? yield(:title) : "CMIForms.com" %></title>
+	<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "My Application" %>">
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+	<%= csrf_meta_tags %>
   
 
-  </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation'  unless current_page?(new_event_submission_path) || current_page?(visitors_thank_you_path) %>
-    </header>
+</head>
+<body>
+	<header>
+		<%= render 'layouts/navigation'  unless current_page?(new_event_submission_path) || current_page?(visitors_thank_you_path) %>
+	</header>
 	
 	
-    <main role="main" id="main">
+	<main role="main" id="main">
 		<a href="#" class="scrollup"></a>
 		<div class="container">
-            <div class="row"> 
-			<div class="background-image"></div>
-			<div class="col-sm-12">
-       <%= render 'layouts/messages' %>
-       <%= yield %><br>
-	   
-	   
-	   
-	    </div>
-     
- 	   </div>
-	   	 
-	   
-	 
-       </div>
-    </main>
+			<div class="row"> 
+				<div class="background-image"></div>
+				<div class="col-sm-12">
+					<%= render 'layouts/messages' %>
+					<%= yield %>
+				</div>
+			</div>
+		</div>
+	</main>
 	  
-  </body>
+</body>
   
-            <footer>
-	        <%= render 'layouts/footer' %>
-            </footer>
+<footer>
+	<%= render 'layouts/footer' %>
+</footer>
     
   
 </html>

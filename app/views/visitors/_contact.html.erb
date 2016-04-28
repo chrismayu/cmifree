@@ -1,0 +1,80 @@
+
+    <!-- Contact Section -->
+
+    <section id="contact">
+		<div class="container-fluid"> 
+            <div class="row white">
+                <div class="col-sm-12  text-center">
+                    <h1 class="et_pb_contact_main_title">Have a Question? We can't wait to hear from you!</h1>
+					<br><br>
+                </div>
+            </div>
+            <div class="row white">
+                <div class=" col-sm-offset-2 col-sm-10 text-center"> 
+					
+				   	<%= simple_form_for @message, :validate => true,  :url => contact_path do |f| %>
+				   
+				   <%= f.error_notification %>
+				   
+				   <% if @message.errors.any? %>  
+				     <div id="errorExplanation">  
+				       <h3><%= pluralize(@message.errors.count, "error") %> prohibited this Application from being saved:</h3>  
+				       <ul>  
+				       <% @message.errors.full_messages.each do |msg| %>  
+				         <li><%= msg %></li>  
+				       <% end %>  
+				       </ul>  
+				     </div>  
+				     <% end %>
+				   
+				   
+				   	<table class=" col-xs-12 col-sm-10">
+
+				   	  <tbody>
+				   
+				   
+				   	  	 <tr>	     
+				   		  <th>
+				   			<br>
+		  
+				   		  <%= f.input :name, :label=>"Name:", :placeholder=>"Your Name", :input_html => { :class => "enroll_input col-sm-6" }, :validate => { :presence => true, :uniqueness => false } %>
+				   	  
+				          <br>  <br>
+				   	   
+				   		  <%= f.input :email, :label=>"Email Address:",  :input_html => { :class => "enroll_input col-sm-5"}, :placeholder=>"Your Email Address" %> 
+				   	   	 
+				 
+				       
+				    <br>
+				   		<%= f.input :body, :label=>'Message:', as: :text, :input_html => { :class => "col-sm-8", :rows => 7}, :placeholder=>"Message" %>
+
+				     <br>  <br>
+					 
+				   	 </th>
+				   	</tr>
+				   	</tbody>
+				   	</table>
+	<div class="field">
+	  <%= hidden_field_tag :captcha_secret, @captcha.encrypt %>
+	  <%= label_tag :captcha, @captcha.question %>
+	  <%= text_field_tag :captcha, "" %>
+	</div>
+ 
+				     <div class="row">
+				   	<div class="form-actions col-sm-offset-1 col-sm-8 ">
+				   		  <br>  <br>
+				   		    <%= f.button :submit, 'Send Message', :class => 'btn-primary btn' %>
+	 <br>  <br>
+				   	  </div>
+				   	  </div>
+ 
+				   	  </div>
+				   	   </div>
+				   	<% end %>
+					
+					
+                    
+                </div>
+            </div>
+        </div>
+    </section>

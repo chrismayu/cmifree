@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   get "visitors/thank_you"
   root to: 'visitors#index'
+  match 'contact' => 'contact#new',  :via => :get
+  match 'contact' => 'contact#create', :via => :post
   
   
 end

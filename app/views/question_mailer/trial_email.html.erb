@@ -1,0 +1,22 @@
+<br><h1>Event Submission Received</h1>
+<br>
+ <h2>Thank you for your event submission. The information has been submitted.</h2>
+<br>
+ <h4>This is a copy of the data sent:</h4>
+<p>
+ <strong> 
+  Name:  </strong> <%= @trial.full_name %> <br> <strong> 
+  Event Name:  </strong> <%= @trial.event_name %> <br> <strong>
+  Event Description:  </strong> <%= @trial.event_description %> <br> <strong>
+  Event Date:  </strong> <%= date_email(@trial.event_date)  %>  <br> <strong>
+  Start Time:  </strong> <%= time_email(@trial.start_time) %> <br> <strong>
+  End Time:  </strong> <%= time_email(@trial.end_time) %> <br> <strong>
+  It will take place:  </strong> <%= @trial.taking_place %> <br> <strong>
+  It will take place here:  </strong> <%= @trial.taking_place_where %> <br> <strong>
+  Registration Required?:  </strong> <%= if_yes_or_no(@trial.registration_required) %> <br> <strong> 
+  How to Market the Event: </strong> <%= @trial.how_to_market%> <br> 
+<br> <br> 
+
+
+</p>
+ 
