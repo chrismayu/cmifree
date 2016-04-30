@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   match 'contact' => 'contact#new',  :via => :get
   match 'contact' => 'contact#create', :via => :post
   
+  match '*path', to: redirect('/'), via: :all
   
 end
 
