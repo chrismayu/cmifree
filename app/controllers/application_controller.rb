@@ -1,10 +1,13 @@
 class ApplicationController < ActionController::Base
+  include Pundit
+  protect_from_forgery
   include UrlHelper 
   helper UrlHelper
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  
+
+    rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   
  # after_filter :store_location
 
@@ -25,4 +28,24 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
    root_path
   end
+  
+  protected
+
+  def set_set_tenant 
+    detail = Detail.get_tenant
+    @tenant = User.get_name
+    @detail = detail.first
+  end
+  
+  private
+  
+  def user_not_authorized
+    flash[:alert] = "Access denied."
+    unless request.fullpath == root_path
+        redirect_to root_path  
+       end
+    
+ 
+  end
+  
 end

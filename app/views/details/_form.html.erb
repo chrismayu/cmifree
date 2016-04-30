@@ -1,10 +1,7 @@
 <%= simple_form_for ([current_user,@detail]), :html => { :class => 'form-horizontal' } do |f| %>
+<%= f.error_notification %>
   <%= f.input :church_name %>
   <%= error_span(@detail[:church_name]) %>
-  <%= f.input :event_name %>
-  <%= error_span(@detail[:event_name]) %>
- 
- 
  
   
 

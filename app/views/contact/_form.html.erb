@@ -10,22 +10,13 @@
                 </div>
             </div>
             <div class="row white">
-                <div class=" col-sm-offset-2 col-sm-10 text-center"> 
+                <div class="col-sm-offset-1 col-sm-10 text-center"> 
 					
 				   	<%= simple_form_for @message, :validate => true,  :url => contact_path do |f| %>
 				   
 				   <%= f.error_notification %>
 				   
-				   <% if @message.errors.any? %>  
-				     <div id="errorExplanation">  
-				       <h3><%= pluralize(@message.errors.count, "error") %> prohibited this Application from being saved:</h3>  
-				       <ul>  
-				       <% @message.errors.full_messages.each do |msg| %>  
-				         <li><%= msg %></li>  
-				       <% end %>  
-				       </ul>  
-				     </div>  
-				     <% end %>
+				   
 				   
 				   
 				   	<table class=" col-xs-12 col-sm-10">
@@ -50,15 +41,20 @@
 
 				     <br>  <br>
 					 
+					 
+					 <div class="form-group captcha "> <%= label_tag :captcha, @captcha.question %>
+				   
+				 	  <%= hidden_field_tag :captcha_secret, @captcha.encrypt %>
+				 	 
+				 	  <%= text_field_tag :captcha, "" %>
+				 	</div>
+					 
+				 
 				   	 </th>
 				   	</tr>
 				   	</tbody>
 				   	</table>
-	<div class="field">
-	  <%= hidden_field_tag :captcha_secret, @captcha.encrypt %>
-	  <%= label_tag :captcha, @captcha.question %>
-	  <%= text_field_tag :captcha, "" %>
-	</div>
+	
  
 				     <div class="row">
 				   	<div class="form-actions col-sm-offset-1 col-sm-8 ">

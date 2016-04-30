@@ -1,6 +1,7 @@
 class EventSubmissionsController < ApplicationController
   before_action :set_event_submission, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_set_tenant 
+  after_action :verify_authorized, except: [:create, :new]
   # GET /event_submissions
   # GET /event_submissions.json
   def index
@@ -14,9 +15,7 @@ class EventSubmissionsController < ApplicationController
 
   # GET /event_submissions/new
   def new
-    detail = Detail.get_tenant
-    @tenant = User.get_name
-    @detail = detail.first
+ 
     @event_submission = EventSubmission.new
     
   end

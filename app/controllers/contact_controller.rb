@@ -1,4 +1,4 @@
-class ContactsController < ApplicationController
+class ContactController < ApplicationController
 
   def new
     @captcha = Captcha.new
@@ -9,15 +9,28 @@ class ContactsController < ApplicationController
     @captcha = Captcha.decrypt(params[:captcha_secret])
     @message = Message.new(params[:message])
     unless @captcha.correct?(params[:captcha])
+       respond_to do |format|
       flash.now[:alert] = "Please make sure you entered correct value for captcha."
-      # Here we need to initialize @captcha with new object in order to show 
-      # different captcha each time on form 
       @captcha = Captcha.new
-      render :new
+       @message = Message.new
+      format.html { render action: "new" } 
+      format.json { render json: @message.errors, status: :unprocessable_entity }
+        end
     else
-      ContactsMailer.notify(contact).deliver
-      flash[:notice] = "Your message has been sent successfully"
-      redirect_to root_path
+      respond_to do |format|
+           if @message.valid?
+              ContactsMailer.notify(@message).deliver
+             format.html {redirect_to(root_path, :notice => "Your message was successfully sent.")}
+           else
+              
+             format.html { render action: "new" } 
+             format.json { render json: @message.errors, status: :unprocessable_entity }
+           end
+         end
     end
+  
+  
+  
+  
   end
 end

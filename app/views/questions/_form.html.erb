@@ -1,17 +1,10 @@
 
-<% if @question.errors.any? %>  
-  <div id="errorExplanation">  
-    <h4><%= pluralize(@question.errors.count, "error") %> prohibited this Event Form from being saved:</h4>  
-    <ul>  
-    <% @question.errors.full_messages.each do |msg| %>  
-      <li><%= msg %></li>  
-    <% end %>  
-    </ul>  
-  </div>  
-  <% end %>
+ 
 
 
 <%= simple_form_for @question, :html => { :class => 'form-horizontal' } do |f| %>
+  
+   <%= f.error_notification %>
   
     <%= f.input :email_address, :label=>"Your Email:", :placeholder=>"Your Email", :input_html => { :class => "enroll_input col-xs-4"}, :required => true   %>
   
@@ -26,11 +19,11 @@
  
      <%= f.input :event_description , :label=>"Event Description :", :placeholder=>"Event Description ", :input_html => { :class => "enroll_input col-xs-4 "}, :required => true   %>
   <%= error_span(@question[:event_description]) %>
-  <%= f.input :event_date, :label=>"Date* (mm/dd/yyyy):"  %>
+  <%= f.input :event_date, :label=>"Date* (mm/dd/yyyy):" %>
   <%= error_span(@question[:event_date]) %>
-  <%= f.input :start_time, :label=>"Event Start Time:*" %>
+  <%= f.input :start_time, :label=>"Event Start Time:*  24hour format",as: :time  %>
   <%= error_span(@question[:start_time]) %>
-  <%= f.input :end_time, :label=>"Event End Time:*"  %>
+  <%= f.input :end_time, :label=>"Event End Time:*  24hour format",as: :time   %>
   <%= error_span(@question[:end_time]) %>
   <%= f.input :taking_place, :label=>"Where will your event be taking place?" , :prompt=>["Please Select" ],:collection=>[ ['At Our Church', 'At Our Church' ], ['Somewhere Else..', 'Somewhere Else..' ]  ],  :input_html => { :class => "enroll_input col-xs-1 "}%>
   
@@ -56,7 +49,7 @@
   
  
 
-  <%= f.button :submit, "Submit your Event", :class => 'btn-primary.outline' %> 
+  <%= f.button :submit, "Submit your Event", :class => 'btn btn-primary ' %> 
 
  
 <% end %>

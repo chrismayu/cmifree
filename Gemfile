@@ -31,6 +31,7 @@ gem 'twitter-bootstrap-rails', ' 3.2.0'
 gem 'bootstrap-datepicker-rails'
 gem 'rollbar', '~> 2.8.3'
 gem 'apartment'
+gem "pundit"
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-angular'
