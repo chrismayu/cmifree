@@ -1,10 +1,12 @@
 class DetailsController < ApplicationController
   before_action :set_detail, only: [:show, :edit, :update, :destroy]
-
+  after_action :verify_authorized #, except: [:create, :new]
+ 
   # GET /details
   # GET /details.json
   def index
     @details = Detail.all
+    authorize @details 
   end
 
   # GET /details/1
@@ -13,24 +15,26 @@ class DetailsController < ApplicationController
     if current_user.detail.church_name == nil
       redirect_to edit_user_detail_path(current_user,current_user.detail)
     end 
-    
+    authorize @detail
   end
 
   # GET /details/new
   def new
     
     @detail = Detail.new
+    authorize @detail
   end
 
   # GET /details/1/edit
   def edit
+    authorize @detail
   end
 
   # POST /details
   # POST /details.json
   def create
     @detail = Detail.new(detail_params)
-
+  authorize @detail
     respond_to do |format|
       if @detail.save
         format.html { redirect_to root_path, notice: 'Detail was successfully created.' }
@@ -45,6 +49,7 @@ class DetailsController < ApplicationController
   # PATCH/PUT /details/1
   # PATCH/PUT /details/1.json
   def update
+    authorize @detail
     respond_to do |format|
       if @detail.update(detail_params)
         format.html { redirect_to root_path, notice: 'Detail was successfully updated.' }
@@ -59,7 +64,9 @@ class DetailsController < ApplicationController
   # DELETE /details/1
   # DELETE /details/1.json
   def destroy
+    authorize @detail
     @detail.destroy
+    
     respond_to do |format|
       format.html { redirect_to details_url, notice: 'Detail was successfully destroyed.' }
       format.json { head :no_content }

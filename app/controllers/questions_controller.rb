@@ -1,24 +1,30 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+   after_action :verify_authorized, except: [:create, :new]
+     before_action :admin_only, :except => [:create, :new]
 
   # GET /questions
   # GET /questions.json
   def index
     @questions = Question.all
+    authorize @questions
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
+    authorize @question
   end
 
   # GET /questions/new
   def new
-    @question = Question.new     
+    @question = Question.new 
+ 
   end
  
   # GET /questions/1/edit
   def edit
+    authorize @question
   end
 
   # POST /questions
@@ -41,6 +47,7 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
+    authorize @question
     respond_to do |format|
       if @question.update(question_params)
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
@@ -55,6 +62,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
+    authorize @question
     @question.destroy
     respond_to do |format|
       format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }

@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  include Pundit
-  protect_from_forgery
+  include Pundit 
   include UrlHelper 
   helper UrlHelper
   # Prevent CSRF attacks by raising an exception.

@@ -2,26 +2,31 @@ class EventSubmissionsController < ApplicationController
   before_action :set_event_submission, only: [:show, :edit, :update, :destroy]
   before_action :set_set_tenant 
   after_action :verify_authorized, except: [:create, :new]
+  before_action :admin_only, :except => [:create, :new]
+ 
   # GET /event_submissions
   # GET /event_submissions.json
   def index
     @event_submissions = EventSubmission.all
+    authorize @event_submissions
   end
 
   # GET /event_submissions/1
   # GET /event_submissions/1.json
   def show
+     authorize @event_submission
   end
-
+ 
   # GET /event_submissions/new
   def new
  
     @event_submission = EventSubmission.new
-    
+     
   end
 
   # GET /event_submissions/1/edit
   def edit
+    authorize @event_submission
   end
 
   # POST /event_submissions
@@ -50,6 +55,7 @@ class EventSubmissionsController < ApplicationController
   # PATCH/PUT /event_submissions/1
   # PATCH/PUT /event_submissions/1.json
   def update
+    authorize @event_submission
     respond_to do |format|
       if @event_submission.update(event_submission_params)
         format.html { redirect_to @event_submission, notice: 'Event submission was successfully updated.' }
@@ -64,6 +70,7 @@ class EventSubmissionsController < ApplicationController
   # DELETE /event_submissions/1
   # DELETE /event_submissions/1.json
   def destroy
+    authorize @event_submission
     @event_submission.destroy
     respond_to do |format|
       format.html { redirect_to event_submissions_url, notice: 'Event submission was successfully destroyed.' }
