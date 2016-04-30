@@ -18,12 +18,6 @@
 				<%= f.label :subdomain %>
 				<%= f.text_field :subdomain, :autofocus => true, class: 'form-control' %>
 			</div>
-		    <%= f.fields_for :detail do |a| %>
-		      <div class="field">
-		        <%= a.label :church_name %><br />
-		        <%= a.text_field :church_name %>
-		      </div>
-		    <% end %>
 			<div class="form-group">
 				<%= f.label :name %>
 				<%= f.text_field :name, :autofocus => true, class: 'form-control' %>

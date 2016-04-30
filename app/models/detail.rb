@@ -8,15 +8,12 @@ class Detail < ActiveRecord::Base
   # validates :event_name, :presence => true
   # validates :title, :presence => true
 
-  scope :submission, -> { select( :church_name) }
-
- 
-
+  scope :submission, -> { select( :church_name) } 
+  
   def self.get_tenant
     tenant_name = Apartment::Tenant.current
     user = User.get_tenant_user
     detail = Detail.submission.where(:user_id => user.first.id)
-    
   end
 
 

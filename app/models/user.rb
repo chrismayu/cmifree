@@ -34,14 +34,12 @@ class User < ActiveRecord::Base
    def self.get_tenant_user_email
      tenant_name = Apartment::Tenant.current
      detail = User.email.where(:subdomain => tenant_name)
-     
    end
  
 
    def self.get_tenant_user
      tenant_name = Apartment::Tenant.current
      detail = User.submission.where(:subdomain => tenant_name)
-     
    end
  
 
