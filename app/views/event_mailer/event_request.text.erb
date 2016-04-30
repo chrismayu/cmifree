@@ -9,7 +9,7 @@
   Start Time: <%= time_email(@event_submission.start_time) %>  
   End Time: <%= time_email(@event_submission.end_time) %>
   It will take place: <%= @event_submission.taking_place %> 
-  It will take place here: <%= @event_submission.taking_place_where %> 
+  It will take place here:  <%= @event_submission.taking_place_where if @event_submission.taking_place_where !=nil%>
   Registration Required?: <%= if_yes_or_no(@event_submission.registration_required) %>  
   How to Market the Event: <%= @event_submission.how_to_market%> 
  

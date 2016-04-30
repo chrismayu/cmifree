@@ -13,6 +13,7 @@ class DetailsController < ApplicationController
   # GET /details/1.json
   def show
     if current_user.detail.church_name == nil
+      
       redirect_to edit_user_detail_path(current_user,current_user.detail)
     end 
     authorize @detail
@@ -50,6 +51,12 @@ class DetailsController < ApplicationController
   # PATCH/PUT /details/1.json
   def update
     authorize @detail
+    if @detail.emailed == false
+      @detail.emailed = true
+      UsersMailer.welcome(current_user).deliver_now
+    end 
+    
+ 
     respond_to do |format|
       if @detail.update(detail_params)
         format.html { redirect_to root_path, notice: 'Detail was successfully updated.' }
@@ -82,6 +89,6 @@ class DetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def detail_params
-      params.require(:detail).permit(:church_name, :event_name, :title, :top_comment, :notes, :user_id, :premium, :image_data, :remove_date, :user_id, :disable)
+      params.require(:detail).permit(:church_name, :event_name, :emailed, :title, :top_comment, :notes, :user_id, :premium, :image_data, :remove_date, :user_id, :disable)
     end
 end

@@ -3,8 +3,9 @@
   <%= f.input :church_name %>
   <%= error_span(@detail[:church_name]) %>
  
-  
+ 
 
+<%= hidden_field_tag :emailed, @detail.emailed %>
   <%= f.button :submit, :class => 'btn-primary' %>
    <% if ready?(current_user)%>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

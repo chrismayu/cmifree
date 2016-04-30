@@ -1,2 +1,2 @@
 	Here is the link to your new form - pass this link around:
- <%= link_to "#{@tenant}.#{ENV['DOMAIN_NAME']}",  root_url(subdomain: @tenant) %>
+ <%= link_to "#{@user.subdomain}.#{ENV['DOMAIN_NAME']}",  root_url(subdomain: @user.subdomain) %>
