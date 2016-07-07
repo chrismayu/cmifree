@@ -7,8 +7,12 @@
       <%= f.text_field :subdomain, :autofocus => true, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name,   class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name,  class: 'form-control' %>
     </div>
     <div class="form-group">
       <%= f.label :email %>
@@ -21,6 +25,14 @@
     <div class="form-group">
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :church_name %>
+      <%= f.text_field :church_name,   class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :how_did_you_hear %>
+      <%= f.text_field :how_did_you_hear,   class: 'form-control' %>
     </div>
      <%= f.submit 'Sign up', :class => 'button right' %>
   <% end %>
