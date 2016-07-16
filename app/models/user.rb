@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
 
-   validates_presence_of :subdomain
+   validates_presence_of :subdomain, :first_name, :last_name
    validates_format_of :subdomain, :with => /\A[A-Za-z0-9-]+\z/, :message => 'The subdomain can only contain alphanumeric characters and dashes.', :allow_blank => true
    validates_uniqueness_of :subdomain, :case_sensitive => false, :message => "  is already in use"
    validates_exclusion_of :subdomain, :in => %w( tester support blog www billing help api ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."

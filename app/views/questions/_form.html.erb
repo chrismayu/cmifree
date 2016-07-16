@@ -29,20 +29,33 @@
   
  <%= error_span(@question[:taking_place]) %>
   
- 
- 
+
  <div id="taking_place_where" >
 	 
   <%= f.input :taking_place_where , :label=>"In which room is your event?"%>
   <%= error_span(@question[:taking_place_where]) %>
  
  </div>
- 
- 
+ <% if error_span(@question[:taking_place_address]).present? %>
+ yes error
+ <%end%>
+   <div id="taking_place_address" >
+  <%= f.input :taking_place_address , :label=>"What is the Venue Name and Address?"%>
+  <%= error_span(@question[:taking_place_address]) %>
+
+ </div>
  
    <%= f.input :registration_required,  :as => :radio_buttons, :label=>"Is registration required?*"  %>
   <%= error_span(@question[:registration_required]) %>
   
+   <div id="registration_required_where" >
+  <%= f.input :registration_required_where, :label=>"How does someone register? (Phone number, website, etc.)*"%>
+  <%= error_span(@question[:registration_required_where]) %>
+
+ </div>
+ 
+ 
+ 
  
    <%= f.input :how_to_market,   :label=>"How would you like your event promoted?*"  %>
   <%= error_span(@question[:how_to_market]) %>

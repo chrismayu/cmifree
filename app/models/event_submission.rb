@@ -13,7 +13,7 @@ class EventSubmission < ActiveRecord::Base
   
  
   def taking_place_somewhere?
-    taking_place == "At Our Church"
+    taking_place == "At Our Church" || taking_place == "Somewhere Else.."
   end
 
   

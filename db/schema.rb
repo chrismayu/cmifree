@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160707193735) do
+ActiveRecord::Schema.define(version: 20160707200350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20160707193735) do
     t.time     "end_time"
     t.string   "taking_place"
     t.string   "taking_place_where"
-    t.boolean  "registration_required", default: false
+    t.boolean  "registration_required",       default: false
     t.string   "last_name"
     t.string   "first_name"
     t.string   "middle_initial"
@@ -50,9 +50,11 @@ ActiveRecord::Schema.define(version: 20160707193735) do
     t.string   "postal_code"
     t.string   "phone_number"
     t.string   "email_address"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.text     "how_to_market"
+    t.string   "taking_place_address"
+    t.string   "registration_required_where"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -64,8 +66,8 @@ ActiveRecord::Schema.define(version: 20160707193735) do
     t.string   "postal_code"
     t.string   "phone_number"
     t.string   "email_address"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.string   "full_name"
     t.string   "event_name"
     t.text     "event_description"
@@ -74,8 +76,10 @@ ActiveRecord::Schema.define(version: 20160707193735) do
     t.date     "end_time"
     t.string   "taking_place"
     t.string   "taking_place_where"
-    t.boolean  "registration_required", default: false
+    t.boolean  "registration_required",       default: false
     t.text     "how_to_market"
+    t.string   "taking_place_address"
+    t.string   "registration_required_where"
   end
 
   create_table "users", force: :cascade do |t|

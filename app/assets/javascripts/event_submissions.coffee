@@ -5,19 +5,34 @@
 $(document).ready ->  
   $('#question_taking_place').change ->
     if $(this).val() is "At Our Church"
-     $('#taking_place_where').show 'slow'
+     $('#taking_place_where').show 'fast'
     else
-     $('#taking_place_where').hide 'slow'	
+     $('#taking_place_where').hide 'fast'	
+    return
+  return
+
+$(document).ready ->  
+  $('#question_taking_place').change ->
+    if $(this).val() is "Somewhere Else.."
+     $('#taking_place_address').show 'fast'
+    else
+     $('#taking_place_address').hide 'fast'	
     return
   return
 
 $(document).ready ->  
   $('#event_submission_taking_place').change ->
     if $(this).val() is "At Our Church"
-     $('#taking_place_where').show 'slow'
+     $('#taking_place_where').show 'fast'
     else
-     $('#taking_place_where').hide 'slow'	
+     $('#taking_place_where').hide 'fast'	
+    return
+    if $(this).val() is "Somewhere Else.."
+     $('#taking_place_address').show 'fast'
+    else
+     $('#taking_place_address').hide 'fast'	
     return
   return
+
  
   

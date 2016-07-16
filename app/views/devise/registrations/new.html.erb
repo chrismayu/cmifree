@@ -1,39 +1,10 @@
 <div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
+  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
     <h3>Sign up</h3>
     <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :subdomain %>
-      <%= f.text_field :subdomain, :autofocus => true, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name,   class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name,  class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :church_name %>
-      <%= f.text_field :church_name,   class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :how_did_you_hear %>
-      <%= f.text_field :how_did_you_hear,   class: 'form-control' %>
-    </div>
+  
+	 <%= render :partial => 'user_form',  :locals => {:f => f, :user => resource_name } %>	
+	
      <%= f.submit 'Sign up', :class => 'button right' %>
   <% end %>
 </div>

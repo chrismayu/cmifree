@@ -36,8 +36,12 @@
   <dd><%= @question.taking_place %></dd>
   <dt><strong><%= model_class.human_attribute_name(:taking_place_where) %>:</strong></dt>
   <dd><%= @question.taking_place_where %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taking_place_address) %>:</strong></dt>
+  <dd><%= @question.taking_place_address %></dd>
   <dt><strong><%= model_class.human_attribute_name(:registration_required) %>:</strong></dt>
   <dd><%= @question.registration_required %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:registration_required_where) %>:</strong></dt>
+  <dd><%= @question.registration_required_where %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

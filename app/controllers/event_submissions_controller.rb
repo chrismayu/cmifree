@@ -86,6 +86,6 @@ class EventSubmissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_submission_params
-      params.require(:event_submission).permit(:full_name, :event_name,  :how_to_market, :event_description, :event_date, :start_time, :end_time, :taking_place, :taking_place_where, :registration_required, :last_name, :first_name, :middle_initial, :address, :city, :postal_code, :phone_number, :email_address)
+      params.require(:event_submission).permit(:full_name, :event_name,  :taking_place_address, :registration_required_where, :how_to_market, :event_description, :event_date, :start_time, :end_time, :taking_place, :taking_place_where, :registration_required, :last_name, :first_name, :middle_initial, :address, :city, :postal_code, :phone_number, :email_address)
     end
 end
