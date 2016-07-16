@@ -17,7 +17,7 @@
  	<%= f.input :the_answer , :label=>'The Answer of the Question :', :input_html => { :class => "enroll_input", :rows => 9} %>
  <%= error_span(@faq[:the_answer]) %>
  
-  <%= render :partial => 'site_setups/markdown'%>
+  <%= render :partial => 'layouts/markdown'%>
  
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

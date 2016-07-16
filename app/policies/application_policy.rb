@@ -59,7 +59,9 @@ class ApplicationPolicy
     end
   end
   
-  
+  def allowed_admins?
+    @user.try(:admin?)  
+  end
   private
  
  def admin_or_current_user_private? 
@@ -79,9 +81,7 @@ class ApplicationPolicy
  end
  
  
- def allowed_admins?
-   @user.try(:admin?)  
- end
+
  
  def allowed_editor?
    @user.try(:editor?) 

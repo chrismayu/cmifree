@@ -50,11 +50,6 @@ class PagesController < ApplicationController
       
     @faqs = Faq.member
     
-    if policy(Faq).editor? 
-     
-    @faqs = Faq.editor.order(:updated_at).order(:editor)
-    end 
-    
     if policy(Faq).admin? 
    
     @faqs = Faq.all
