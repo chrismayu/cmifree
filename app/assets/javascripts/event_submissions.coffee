@@ -34,5 +34,14 @@ $(document).ready ->
     return
   return
 
+$(document).ready ->  
+  $('#user_how_did_you_hear').change ->
+    if $(this).val() is "Other..."
+     $('#how_did_you_hear_other').show 'fast'
+    else
+     $('#how_did_you_hear_other').hide 'fast'	
+    return
+  return
+
  
   

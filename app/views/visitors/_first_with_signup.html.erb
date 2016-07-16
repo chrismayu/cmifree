@@ -17,29 +17,14 @@
 		<br><p class=" white_text">
 		[Yes, our event form is free to use. Premium features are also available]</p>
 		<div class="authform">
-			<%= form_for(:user, :url => registration_path(:user)) do |f| %>
+			
+			<%= simple_form_for(:user, :url => registration_path(:user)) do |f| %>
+			
 			<h3>Sign up</h3> 
-			<div class="form-group">
-				<%= f.label :subdomain %>
-				<%= f.text_field :subdomain, :autofocus => true, class: 'form-control' %>
-			</div>
-			<div class="form-group">
-				<%= f.label :name %>
-				<%= f.text_field :name, :autofocus => true, class: 'form-control' %>
-			</div>
-			<div class="form-group">
-				<%= f.label :email %>
-				<%= f.email_field :email, class: 'form-control' %>
-			</div>
-			<div class="form-group">
-				<%= f.label :password %>
-				<%= f.password_field :password, class: 'form-control' %>
-			</div>
-			<div class="form-group">
-				<%= f.label :password_confirmation %>
-				<%= f.password_field :password_confirmation, class: 'form-control' %>
-			</div>
-			<%= f.submit "Let's Get Started!", :class => 'button center' %>
+			 <%= render :partial => './devise/registrations/user_form',  :locals => {:f => f } %>	
+			<br><br> 
+			 
+			<%= f.submit "Let's Get Started!", :class => 'outline button center' %>
 			<% end %>
 		</div>
 	 

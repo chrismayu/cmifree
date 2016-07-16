@@ -9,6 +9,7 @@ end
 Rails.application.routes.draw do
  
   
+  resources :faqs
   constraints SubdomainConstraint do
      
      resources :event_submissions
@@ -26,9 +27,9 @@ Rails.application.routes.draw do
   root to: 'visitors#index'
   match 'contact' => 'contact#new',  :via => :get
   match 'contact' => 'contact#create', :via => :post
-  
-  match '*path', to: redirect('/'), via: :all
-  
+  resources :pages, :path => ''  # to prevent high_voltage for doing ...com/pages/about
+ 
+   
 end
 
 

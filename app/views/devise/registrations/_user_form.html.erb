@@ -1,29 +1,35 @@
  
- <%= f.input :subdomain, :label=>"SubDomain:"  %>
+ 
+  <%= f.error_notification %>
+ 
+
+ 
+  <%= f.input :first_name, :label=>"First Name:" ,  :placeholder=>"First Name:", :input_html => { :class => "enroll_input col-xs-4 "}, :required => true   %>
+ 
+ <%= f.input :last_name, :label=>"Last Name:" ,  :placeholder=>"Last Name:", :input_html => { :class => "enroll_input col-xs-4 "}, :required => true   %>
+ 
+ 
+    <%= f.input :email, :label=>"Your Email:", :placeholder=>"Your Email", :input_html => { :class => "enroll_input col-xs-4"}, :required => true   %>
+ 
+ <%= f.input :password, :label=>"Password:" , :placeholder=>"Password", :input_html => { :class => "enroll_input col-xs-4"}, :required => true   %>
+ 
+ <%= f.input :password_confirmation, :label=>"Password Confirmation:", :placeholder=>"Password Confirmation", :input_html => { :class => "enroll_input col-xs-4"}, :required => true    %>
+ 
+ <%= f.input :subdomain,  :label=>"SubDomain:", :placeholder=>"The SubDomain you would like", :input_html => { :class => "enroll_input col-xs-4"}, :required => true    %>
  
  
  
- <%= f.input :first_name, :label=>"First Name:"  %>
+ <%= f.input :church_name, :label=>"Church Name:" , :placeholder=>"Your Church Name", :input_html => { :class => "enroll_input col-xs-4"}, :required => true   %>
+   
  
- 
- <%= f.input :last_name, :label=>"Lasst Name:"  %>
- 
- 
- <%= f.input :email, :label=>"Email:"  %>
- 
- 
- 
- <%= f.input :password, :label=>"Password:"  %>
- 
- 
- <%= f.input :password_confirmation, :label=>"Password Confirmation:"  %>
- 
- 
- 
- <%= f.input :church_name, :label=>"Church Name:"  %>
+   <%= f.input :how_did_you_hear, :label=>"How Did You Hear:" , :prompt=>["Please Select" ],:collection=>[  ['Google Search', 'Google Search'],  ['Facebook', 'Facebook'],  ['Twitter', 'Twitter'], ['ChurchMarketingIdeas.com', 'ChurchMarketingIdeas.com'], ['From a friend', 'From a friend'], ['Other...', 'Other...'] ],  :input_html => { :class => "enroll_input col-xs-1 "}%>
   
  
- <%= f.input :how_did_you_hear, :label=>"How Did You Hear:"  %>
+ 
+   <div id="how_did_you_hear_other" >
+  <%= f.input :how_did_you_hear_other, :label=>"If other, please specify..."%>
+
+ </div>
  
  
  

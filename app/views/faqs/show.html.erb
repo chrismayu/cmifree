@@ -1,0 +1,31 @@
+ <div class="row">
+	 <div class="col-sm-offset-1 col-sm-10 show-form">
+		 
+
+	<dl class="dl-horizontal">
+	  <dt><strong>Title:</strong></dt>
+	  <dd><%= @faq.title %></dd>
+	  <dt><strong>Admin:</strong></dt>
+	  <dd><%= yes_no(@faq.admin) %></dd>
+	  <dt><strong>Member Only:</strong></dt>
+	  <dd><%= yes_no(@faq.member_only) %></dd>
+ 
+	  <dt><strong>Editor:</strong></dt>
+	  <dd><%= yes_no(@faq.editor) %></dd>
+	  <dt><strong>The Answer:</strong></dt>
+	  <dd><%= faq_markdown(@faq.the_answer) %></dd>
+	</dl>
+
+	<%= link_to t('.back', :default => t("helpers.links.back")),
+	              faqs_path, :class => 'btn btn-default'  %>
+	<%= link_to t('.edit', :default => t("helpers.links.edit")),
+	              edit_faq_path(@faq), :class => 'btn btn-default' %>
+	<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+	              faq_path(@faq),
+	              :method => 'delete',
+	              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+	              :class => 'btn btn-danger' %>
+  
+	
+</div>
+</div>

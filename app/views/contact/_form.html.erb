@@ -15,18 +15,11 @@
 				   	<%= simple_form_for @message, :validate => true,  :url => contact_path do |f| %>
 				   
 				   <%= f.error_notification %>
-				   
-				   
-				   
-				   
+				    
 				   	<table class=" col-xs-12 col-sm-10">
-
 				   	  <tbody>
-				   
-				   
 				   	  	 <tr>	     
-				   		  <th>
-				   			<br>
+				   		  <th> 
 		  
 				   		  <%= f.input :name, :label=>"Name:", :placeholder=>"Your Name", :input_html => { :class => "enroll_input col-sm-6" }, :validate => { :presence => true, :uniqueness => false } %>
 				   	  
@@ -59,7 +52,7 @@
 				     <div class="row">
 				   	<div class="form-actions col-sm-offset-1 col-sm-8 ">
 				   		  <br>  <br>
-				   		    <%= f.button :submit, 'Send Message', :class => 'btn-primary btn' %>
+				   		    <%= f.button :submit, 'Send Message', :class => 'btn-primary btn outline' %>
 	 <br>  <br>
 				   	  </div>
 				   	  </div>

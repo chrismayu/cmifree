@@ -32,6 +32,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'rollbar', '~> 2.8.3'
 gem 'apartment'
 gem "pundit"
+gem 'redcarpet'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-angular'

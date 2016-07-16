@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160707200350) do
+ActiveRecord::Schema.define(version: 20160716210700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 20160707200350) do
     t.text     "how_to_market"
     t.string   "taking_place_address"
     t.string   "registration_required_where"
+  end
+
+  create_table "faqs", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.boolean  "admin",       default: false
+    t.boolean  "member_only", default: false
+    t.integer  "answer"
+    t.boolean  "editor",      default: false
+    t.text     "the_answer"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "questions", force: :cascade do |t|

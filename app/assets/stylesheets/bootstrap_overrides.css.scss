@@ -31,6 +31,10 @@ body {
 	}
  
 
+#how_did_you_hear_other{
+	
+	  display: none;
+	}
 // import the CSS framework
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -44,6 +48,17 @@ img {
 .navbar-brand {
   font-size: inherit;
   }
+
+
+  /* FAQs */
+
+  #faqs { position:relative; }
+  #faqs h4	{ cursor:pointer; }
+  #faqs h4.active	{ color:#d74646; }
+  #faqs div { height:0; overflow:hidden; position:relative; }
+  #faqs div p	{ padding:0; margin-bottom:15px; }
+
+ 
 
 
 // apply styles to HTML elements
@@ -75,6 +90,28 @@ section {
 	background-color:white;
 	width: 100%;
 } 
+
+.btn.outline {
+	background: none;
+	padding: 12px 22px;
+}
+
+.btn-primary.outline {
+	border: 2px solid #0099cc;
+	color: #0099cc;
+}
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+	color: #33a6cc;
+	border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+	border-color: #007299;
+	color: #007299;
+	box-shadow: none;
+}
+
+
 
 
 .navbar-fixed-top_lower {
