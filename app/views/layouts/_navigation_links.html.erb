@@ -1,5 +1,12 @@
 <%# add navigation links to this file %>
-<li><%= link_to 'FAQ’s', page_path('FrequentlyAskedQuestions') %></li>
+<li> 
+
+<% unless  current_page?('/FrequentlyAskedQuestions') %>
+<%= link_to 'FAQ’s', page_path('FrequentlyAskedQuestions') %>
+<%else%>
+<%= link_to 'Home', root_path %>
+<% end %></li>
+
 <li><%= link_to  "Get Premium", "http://www.cmiforms.com/get-premium/" %></li> 
  
 
