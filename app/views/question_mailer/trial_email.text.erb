@@ -1,3 +1,16 @@
-Question#trial_email
+ Thank you for your event submission. The information has been submitted.
 
-<%= @greeting %>, find me in app/views/question/trial_email.text.erb
+ This is a copy of the data sent:
+ 
+  Name: <%= @trial.full_name %>  
+  Event Name: <%= @trial.event_name %> 
+  Event Description: <%= @trial.event_description %> 
+  Event Date: <%= date_email(@trial.event_date)  %> 
+  Start Time: <%= time_email(@trial.start_time) %>  
+  End Time: <%= time_email(@trial.end_time) %>  
+  It will take place: <%= @trial.taking_place %> 
+  It will take place here:  <%= @trial.taking_place_where if @trial.taking_place_where !=nil%>
+  Registration Required?: <%= if_yes_or_no(@trial.registration_required) %> 
+  How to Market the Event: <%= @trial.how_to_market%> 
+   
+ <br> <br> 
