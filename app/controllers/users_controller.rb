@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(params[:id])
+     Apartment::Tenant.drop(user.subdomain)
     user.destroy
     redirect_to users_path, :notice => "User deleted."
   end
