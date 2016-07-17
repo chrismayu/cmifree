@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   authenticated :user do
      root 'users#show', as: :authenticated_root
   end
+  
   resources :questions 
+  get "users/stats"
   devise_for :users, controllers: {registrations: "registrations" }
   resources :users do
   resources :details

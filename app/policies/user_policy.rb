@@ -13,39 +13,9 @@ class UserPolicy < ApplicationPolicy
    def index?
      @current_user.admin?
    end
-   def index_import?
-     @current_user.admin?
-   end
 
-   def all_applicant_new?
-    @current_user.admin? 
-   end   
-   def all_applicant?
-    @current_user.admin? 
-   end
-   
-   def generate_new_password_email?
-     @current_user.admin?
-   end 
-   def all_confirmed?
-     @current_user.admin?
-   end         
-   def attachment?
-     @current_user.admin?  
-   end
-   
-   def anita?
-     @current_user.admin?
-   end     
-   def flights?
-     @current_user.admin?
-   end
- 
-   def medical?
-     @current_user.admin?  
-   end
- 
-   def insurance?
+
+   def stats?
     @current_user.admin? 
    end
    

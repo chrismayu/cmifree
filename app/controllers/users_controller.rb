@@ -1,3 +1,5 @@
+class Status < Struct.new(:full_name, :email, :subdomain, :count, :date); end
+
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_only, :except => :show
@@ -5,6 +7,28 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+  
+  def stats
+    users = User.all
+    @stat = []
+    users.each do |u| 
+      stat = Status.new 
+      stat.full_name = u.name if !nil
+      stat.full_name = u.first_name if !nil
+      stat.email = u.email
+      stat.subdomain = u.subdomain
+      
+      Apartment::Tenant.switch(stat.subdomain)  
+      stat.count = EventSubmission.all.count
+      unless EventSubmission.last == nil
+      stat.date = EventSubmission.last.created_at  
+      
+    end 
+      @stat << stat
+    end
+  
+  end
+  
 
   def show
     @user = User.find(current_user.id)

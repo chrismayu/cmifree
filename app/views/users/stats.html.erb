@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <h3>Users</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @stat.each do |stat| %>
+            <tr>
+
+			 <td>
+			   <%= stat.subdomain %>
+			 </td>
+			 <td>
+			   <%= stat.full_name %>
+			 </td>
+			 
+			 <td>
+			   <%= stat.email %>
+			 </td>
+			 
+			 <td>
+			   <%= stat.count %>
+			 </td>
+			 
+			 <td>
+			   <%= stat.date %>
+			 </td>
+			  
+			 
+			 
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+ 
