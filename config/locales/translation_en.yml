@@ -4,7 +4,8 @@ en:
       detail: Detail  #g
       question: Question  #g
       user: User  #g
-      event_submission: Event submission  #g
+      event_submission: Event Submission  #g
+      faq: Frequently Asked Question  #g
 
     attributes:
       detail:
@@ -18,6 +19,7 @@ en:
         title: Title  #g
         top_comment: Top comment  #g
         user: :activerecord.models.user  #g
+        emailed: Emailed  #g
 
       question:
         address: Address  #g
@@ -37,6 +39,9 @@ en:
         start_time: start_time  #g
         taking_place: Taking place  #g
         taking_place_where: Taking place where  #g
+        how_to_market: How to market  #g
+        registration_required_where: Registration required where  #g
+        taking_place_address: Taking place address  #g
 
       user:
         current_sign_in_at: Current sign in at  #g
@@ -52,6 +57,11 @@ en:
         reset_password_token: Reset password token  #g
         role: Role  #g
         subdomain: Subdomain  #g
+        church_name: Church name  #g
+        first_name: First name  #g
+        how_did_you_hear: How did you hear  #g
+        how_did_you_hear_other: How did you hear other  #g
+        last_name: Last name  #g
 
       event_submission:
         address: Address  #g
@@ -71,3 +81,14 @@ en:
         start_time: Start time  #g
         taking_place: Taking place  #g
         taking_place_where: Taking place where  #g
+        how_to_market: How to market  #g
+        registration_required_where: Registration required where  #g
+        taking_place_address: Taking place address  #g
+
+      faq:
+        admin: Admin  #g
+        answer: Answer  #g
+        editor: Editor  #g
+        member_only: Member only  #g
+        the_answer: The answer  #g
+        title: Title  #g

@@ -8,8 +8,8 @@
   <%= f.input :admin, :label=>"Admins Only", :hint=>'Only For System Admins' %>
    <%= error_span(@faq[:admin]) %>
   <% end %>
-   <%= f.input :editor, :label=>"Editors Only", as: :boolean, :hint=>' Make this Question Only Visible to Editors ' %> <%= error_span(@faq[:editor]) %>
-  <%= f.input :member_only, :label=>"Members Only", :hint=>'Only Members can be see' %>
+ 
+  <%= f.input :member_only, :label=>"Premium Members Only", :hint=>'Only Premium Members can see it' %>
    <%= error_span(@faq[:member_only]) %>
 		  
 		  

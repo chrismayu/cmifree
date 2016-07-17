@@ -42,6 +42,9 @@ class ApplicationPolicy
      admin_or_current_user_private?
   end
    
+  def admin_only?
+    allowed_admins?
+  end
    
    
 

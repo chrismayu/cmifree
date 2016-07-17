@@ -1,6 +1,19 @@
-<h1>Editing Faq</h1>
+ 
+<%- model_class = Faq -%>
+ 
 
-<%= render 'form' %>
+ <% provide(:title, "Edit Frequently Asked Questions" ) %>
+  
+  <div class="block">
+ <div class="row">
+	 <div class="col-sm-offset-1 col-sm-10">
+		 
+		 
+ 
+		 <%= render :partial => 'form' %>
 
-<%= link_to 'Show', @faq %> |
-<%= link_to 'Back', faqs_path %>
+  <%= link_to 'Show', @faq %> |
+  <%= link_to 'Back', faqs_path %>
+	
+</div>
+</div></div>

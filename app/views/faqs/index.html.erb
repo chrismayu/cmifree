@@ -1,6 +1,7 @@
 <%- model_class = Faq -%>
+ <div class="block">
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>FAQ's</h1>
 </div>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
@@ -14,8 +15,8 @@
        
       <th>Question</th> 
       <th>Admin</th>
-      <th>Members only</th> 
-      <th>Editor</th>  
+      <th>Premium Members only</th> 
+ 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -26,7 +27,6 @@
         <td  class=" col-sm-5"><%= faq.title %></td> 
         <td><%= yes_no(faq.admin) %></td>
         <td><%= yes_no(faq.member_only) %></td> 
-        <td><%= yes_no(faq.editor) %></td> 
         <td>
             <%= link_to t('.show', :default => t("helpers.links.show")),
                         faq_path(faq), :class => 'btn btn-info btn-xs' %>
@@ -42,3 +42,4 @@
     <% end %>
   </tbody>
 </table>
+</div>
