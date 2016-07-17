@@ -33,6 +33,12 @@ class User < ActiveRecord::Base
      final_name = "#{detail.first.first_name.titleize} #{detail.first.last_name.titleize}"
    end
    
+   def self.get_church
+     tenant_name = Apartment::Tenant.current
+     detail = User.church.where(:subdomain => tenant_name)
+     final_name = "#{detail.first.church_name.titleize}"
+   end
+   
    def self.get_tenant_user_email
      tenant_name = Apartment::Tenant.current
      detail = User.email.where(:subdomain => tenant_name)

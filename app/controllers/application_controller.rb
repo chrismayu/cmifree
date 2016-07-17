@@ -30,10 +30,10 @@ class ApplicationController < ActionController::Base
   
   protected
 
-  def set_set_tenant 
-    detail = Detail.get_tenant
+  def set_set_tenant  
     @tenant = User.get_name
-    @detail = detail.first
+    @church_name = User.get_church
+  
   end
   
   private
