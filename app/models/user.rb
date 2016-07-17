@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
   enum role: [:user, :vip, :admin]
-  
-  has_one :detail   
  
-  after_create :set_detail, :create_tenant
+ 
+  after_create :create_tenant
   after_initialize :set_default_role, :if => :new_record?
 
  
@@ -31,7 +30,7 @@ class User < ActiveRecord::Base
    def self.get_name
      tenant_name = Apartment::Tenant.current
      detail = User.display_name.where(:subdomain => tenant_name)
-     final_name = "#{detail.first_name.titleize} #{detail.last_name.titleize}"
+     final_name = "#{detail.first.first_name.titleize} #{detail.first.last_name.titleize}"
    end
    
    def self.get_tenant_user_email
@@ -46,11 +45,7 @@ class User < ActiveRecord::Base
    end
  
 
-    private
-
-    def set_detail 
-      build_detail
-    end   
+    private 
 
 
     def create_tenant

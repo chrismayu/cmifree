@@ -1,3 +1,22 @@
-<h3>User</h3>
-<p>Name: <%= @user.first_name if @user.first_name %> <%= @user.last_name if @user.last_name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+ <% if user_signed_in? %>
+ 
+   <% if current_user.try(:admin?) %> 
+	 
+	  <%= render :partial => 'admin' ,  :locals => {:detail => @detail } %>	
+	 
+   <% end %>
+ <% end %>
+ 
+ 
+ 
+  <div class="block"> 
+    <div class="row">  
+ <div class="col-sm-offset-1 col-sm-10">
+ <h2>Your questionaire is active and ready to be used:</h2>
+ <br>
+ <h3> Send people here:  <%= link_to "#{current_user.subdomain}.#{ENV['DOMAIN_NAME']}", new_event_submission_url(subdomain: current_user.subdomain) %></h3>
+ <br>
+ </div> 
+ </div>
+ </div>
+ 

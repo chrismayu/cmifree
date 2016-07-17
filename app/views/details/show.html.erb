@@ -1,41 +1,22 @@
-  <%- model_class = Detail -%>
-  
+ <% if user_signed_in? %>
  
- <div class="block"> 
-   <div class="row">  
-<div class="col-sm-offset-1 col-sm-10">
-  
-  <% if ready?(current_user)%> 
-   
-
-<h2>You questionaire is active and ready to be used:</h2>
-<br>
-
-
-<h3> Send people here:  <%= link_to "#{current_user.subdomain}.#{ENV['DOMAIN_NAME']}", new_event_submission_url(subdomain: current_user.subdomain) %></h3>
-<br>
- <% else %>
-Your account is also ready to go:
-
-clikc here to complete your application:
-
-add link to detail edit 
-
+   <% if current_user.try(:admin?) %> 
+	 
+	  <%= render :partial => 'admin' ,  :locals => {:detail => @detail } %>	
+	 
+   <% end %>
  <% end %>
-</div> </div>
-    <div class="row">  
- <div class="col-sm-offset-2 col-sm-8">
-
-<h4>Your Event Submission Detail:</h4>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:church_name) %>:</strong></dt>
-  <dd><%= @detail.church_name %></dd> 
-  <dd><%= @detail.event_name %></dd>
  
-</dl>
-
-<%= link_to "Edit your Event Submission Details",
-              edit_user_detail_path(current_user, @detail), :class => 'btn btn-default' %>
- <br><br>
-</div>
+ 
+ 
+  <div class="block"> 
+    <div class="row">  
+ <div class="col-sm-offset-1 col-sm-10">
+ <h2>Your questionaire is active and ready to be used:</h2>
+ <br>
+ <h3> Send people here:  <%= link_to "#{current_user.subdomain}.#{ENV['DOMAIN_NAME']}", new_event_submission_url(subdomain: current_user.subdomain) %></h3>
+ <br>
+ </div> 
+ </div>
+ </div>
+ 
