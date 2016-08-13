@@ -7,7 +7,7 @@ class ContactsMailer < ApplicationMailer
   #SITE_EMAIL
   def notify(message)
       @message = message 
-      mail  :to => ENV["SITE_EMAIL"] ,  :reply_to => @message.email, subject:  "CMIForms.com || Contact Form #{DateTime.now.strftime("%D at %I:%M%p")}"
+      mail  :to => ENV["ADMIN_EMAIL"] ,  :reply_to => @message.email, subject:  "CMIForms.com || Contact Form #{DateTime.now.strftime("%D at %I:%M%p")}"
         
   end
 end
