@@ -76,6 +76,12 @@ class QuestionsController < ApplicationController
       @question = Question.find(params[:id])
     end
 
+def admin_only
+unless current_user.admin?
+redirect_to :back, :alert => "Access denied."
+end
+end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
       params.require(:question).permit(:last_name, :first_name, :full_name, :taking_place_address, :registration_required_where,:how_to_market,  :event_name, :event_description, :event_date, :start_time, :end_time, :taking_place, :taking_place_where, :registration_required, :middle_initial, :address, :city, :postal_code, :phone_number, :email_address)
