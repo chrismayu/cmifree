@@ -83,6 +83,11 @@ class EventSubmissionsController < ApplicationController
     def set_event_submission
       @event_submission = EventSubmission.find(params[:id])
     end
+def admin_only
+unless current_user.admin?
+redirect_to :back, :alert => "Access denied."
+end
+end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_submission_params
