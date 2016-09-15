@@ -27,7 +27,7 @@ DOMAIN_NAME: heisreal.net
 ROLLBAR_ACCESS_TOKEN: 1a0f03a032724d56b7f8905e1ae51b14
 return_email_address: ruby.rails.chris@gmail.com
 SITE_EMAIL: ruby.rails.chris@gmail.com
-
+ADAM_EMAIL: info@cmiforms.com 
 ROLES: '[admin, user, VIP]'
 URL: 'http://www.hannahs-headbands.com/'
  

@@ -80,5 +80,8 @@ pickle-email-*.html
 .env
 .powenv
 
+# Ignore application configuration
+/config/application.yml
+
 # tilde files are usually backup files from a text editor
 *~
