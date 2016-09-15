@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+    <WindowHeight>11560</WindowHeight>
+    <WindowWidth>15800</WindowWidth>
+    <WindowTopX>360</WindowTopX>
+    <WindowTopY>40</WindowTopY>
+    <TabRatio>600</TabRatio>
+    <ActiveSheet>1</ActiveSheet>
+    <ProtectStructure>False</ProtectStructure>
+    <ProtectWindows>False</ProtectWindows>
+   </ExcelWorkbook>
+  <Worksheet ss:Name="All Users">
+     <Table>
+      <Row>
+
+  
+<Cell><Data ss:Type="String">Name</Data></Cell>
+<Cell><Data ss:Type="String">First Name</Data></Cell> 
+<Cell><Data ss:Type="String">Last Name</Data></Cell> 
+<Cell><Data ss:Type="String">Church Name</Data></Cell> 
+<Cell><Data ss:Type="String">how_did_you_hear</Data></Cell> 
+<Cell><Data ss:Type="String">how_did_you_hear_Other</Data></Cell> 
+<Cell><Data ss:Type="String">Email</Data></Cell> 
+<Cell><Data ss:Type="String">SubDomain</Data></Cell> 
+<Cell><Data ss:Type="String">Signed Up</Data></Cell> 
+
+
+
+      </Row>
+	  
+	  
+    <% @users.each do |user| %> 
+	
+ 
+      <Row>
+ 
+<Cell><Data ss:Type="String"><%= user.name  if user.name !=nil %></Data></Cell> 
+<Cell><Data ss:Type="String"><%= user.first_name  if user.first_name !=nil %></Data></Cell> 
+<Cell><Data ss:Type="String"><%= user.last_name  if user.last_name !=nil %></Data></Cell> 
+<Cell><Data ss:Type="String"><%= user.church_name  if user.church_name !=nil %></Data></Cell> 
+<Cell><Data ss:Type="String"><%= user.how_did_you_hear  if user.how_did_you_hear !=nil %></Data></Cell>
+<Cell><Data ss:Type="String"><%= user.how_did_you_hear_other  if user.how_did_you_hear_other !=nil %></Data></Cell> 
+<Cell><Data ss:Type="String"><%= user.email  if user.email !=nil %></Data></Cell> 
+<Cell><Data ss:Type="String"><%= user.subdomain  if user.subdomain !=nil %></Data></Cell> 
+<Cell><Data ss:Type="String"><%= user.created_at  if user.created_at  !=nil %></Data></Cell>  
+ 
+      </Row>
+ 
+ 
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

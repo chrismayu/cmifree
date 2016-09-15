@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
   authenticated :user do
      root 'users#show', as: :authenticated_root
+      get "users/all_CSV"
   end
   
   resources :questions 

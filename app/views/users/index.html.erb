@@ -1,6 +1,11 @@
 <div class="container">
-  <div class="row">
+  <div class="row block">
     <h3>Users</h3>
+  	  <div class="pull-center" >  
+		  <h5> 
+  	 <%=	 link_to "Download All Users", :controller => :users, :action => :all_CSV, :format => 'xls' %> 	 
+  	 </h5> 
+ </div>
     <div class="column">
       <table class="table">
         <tbody>

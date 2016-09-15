@@ -8,6 +8,14 @@ class UsersController < ApplicationController
     @users = User.all
   end
   
+  def all_CSV
+    @users = User.all
+ 
+    respond_to do |format|
+      format.xls 
+    end
+  end
+  
   def stats
     users = User.all
     @stat = []
