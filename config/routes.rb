@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   match 'contact' => 'contact#new',  :via => :get
   match 'contact' => 'contact#create', :via => :post
   resources :pages, :path => ''  # to prevent high_voltage for doing ...com/pages/about
-  get '*path' => redirect('/')
+  get '/*' => redirect('/')
    
 end
 
