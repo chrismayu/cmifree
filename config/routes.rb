@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   match 'contact' => 'contact#create', :via => :post
   matches 'pages/user' => redirect('/')
   resources :pages, :path => ''  # to prevent high_voltage for doing ...com/pages/about
-  matches 'wordpress' => redirect('/')
+
    
 end
 
