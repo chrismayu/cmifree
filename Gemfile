@@ -33,6 +33,7 @@ gem 'rollbar', '~> 2.8.3'
 gem 'apartment'
 gem "pundit"
 gem 'redcarpet'
+gem 'exception_handler', '~> 0.5.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-angular'
