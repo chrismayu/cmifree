@@ -30,7 +30,6 @@ Rails.application.routes.draw do
   root to: 'visitors#index'
   match 'contact' => 'contact#new',  :via => :get
   match 'contact' => 'contact#create', :via => :post
-  matches 'pages/user' => redirect('/')
   resources :pages, :path => ''  # to prevent high_voltage for doing ...com/pages/about
 
    
