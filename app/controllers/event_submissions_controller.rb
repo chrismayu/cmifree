@@ -73,7 +73,7 @@ class EventSubmissionsController < ApplicationController
     authorize @event_submission
     @event_submission.destroy
     respond_to do |format|
-      format.html { redirect_to event_submissions_url, notice: 'Event submission was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Event submission was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -84,8 +84,11 @@ class EventSubmissionsController < ApplicationController
       @event_submission = EventSubmission.find(params[:id])
     end
 def admin_only
+  
+unless current_user !=nil  
 unless current_user.admin?
 redirect_to :back, :alert => "Access denied."
+end
 end
 end
 
